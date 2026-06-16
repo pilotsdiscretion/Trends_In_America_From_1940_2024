@@ -12,9 +12,9 @@ An interactive, single-page data visualization of how the United States has chan
 
 ## What's inside
 
-The dashboard is organized into topic tabs (listed alphabetically, with **Conclusion** always last):
+The dashboard opens on an **Overview** landing page (concise highlights of every topic) and is then organized into topic tabs (listed alphabetically, with **Summary** always last):
 
-Alcohol & Overdoses · Big Tech · Cancer · Casual Dining · Crime Rates · Demographics · Diet & Nutrition · Economics · Entertainment · Fast Food · Firearms · Gov. Spending · Healthcare · Homeless · Incarceration · Marriage & Family · Mental Health · Mortality · Obesity · Pharmaceuticals · Politics · Poverty · Religion · Sex & Partners · Tariffs · Transportation · Vaccines · **Conclusion**
+**Overview** · Alcohol & Overdoses · Big Tech · Cancer · Casual Dining · Crime Rates · Demographics · Diet & Nutrition · Economics · Entertainment · Fast Food · Firearms · Gov. Spending · Healthcare · Homeless · Incarceration · Marriage & Family · Mental Health · Mortality · Obesity · Pharmaceuticals · Politics · Poverty · Religion · Sex & Partners · Tariffs · Transportation · Vaccines · **Summary**
 
 Each tab combines headline statistics, multiple charts, a "key timeline events" panel, and a methodology/footnote ("data note") explaining the series and its caveats.
 
@@ -24,7 +24,7 @@ Each tab combines headline statistics, multiple charts, a "key timeline events" 
 - **Incarceration** — national rates plus breakdowns by state, by city/county jail system, by race, by most-serious offense, how that offense mix shifted over time, repeat-offending (recidivism), time served versus sentence imposed, and prison gangs / security threat groups.
 - **Homeless** — total population over time (HUD point-in-time counts), by race, by gender, and serious mental illness as a function of the homeless population (general → sheltered → chronic → unsheltered), plus **by state** (counts, per-capita rates, and one-year rate of change), state trends over time, and race/gender by state.
 - **Mental Health** — depression and antidepressant trends, deinstitutionalization, and common diagnoses over time (anxiety, depression, bipolar, schizophrenia) with prevalence and trend charts.
-- **Alcohol & Overdoses** — per-capita alcohol use and the opioid waves, including **fentanyl** as a share of all overdose deaths, plus the other major illicit drugs (cocaine, methamphetamine, heroin, marijuana): overdose deaths by drug type over time, past-year use by substance, marijuana use & legalization, the crack-era cocaine history, alcohol by beverage type and region, and the demographics of drinking and overdose by race, gender and age.
+- **Alcohol & Overdoses** — per-capita alcohol use and the opioid waves, including **fentanyl** as a share of all overdose deaths, plus the other major illicit drugs (cocaine, methamphetamine, heroin, marijuana): overdose deaths by drug type over time, past-year use by substance, marijuana use & legalization, the crack-era cocaine history, alcohol by beverage type and region, the long-run per-capita alcohol-consumption (sales-derived) trend since 1940 and the recent record-low share of adults who drink — a decline led by under-35s as Gen Z drinks markedly less — and the demographics of drinking and overdose by race, gender and age.
 - **Obesity** — adult obesity and average body weight over time, plus breakdowns by sex, age, race/ethnicity and state (most obese: West Virginia), and average BMI over time.
 - **Poverty** — official vs. Supplemental Poverty Measure over time, and breakdowns by age, race, gender/family structure, and state, alongside the economic drivers (unemployment, recessions, income, minimum wage).
 - **Cancer** — incidence and mortality over time, the most common and deadliest cancers by type, 5-year survival over time and by type (treatment progress), survival by stage at diagnosis (why early detection matters), cancer-screening-rate trends, and how risk rises with age.
