@@ -617,6 +617,7 @@
     <button onclick="showSection('econ', this)">💰 Economics</button>
     <button onclick="showSection('entertainment', this)">📺 Entertainment</button>
     <button onclick="showSection('fastfood', this)">🍔 Fast Food</button>
+    <button onclick="showSection('firearms', this)">🔫 Firearms</button>
     <button onclick="showSection('govspend', this)">🏛️ Gov. Spending</button>
     <button onclick="showSection('healthcare', this)">🩺 Healthcare</button>
     <button onclick="showSection('homeless', this)">🏠 Homeless</button>
@@ -939,6 +940,43 @@
       <div class="chart-wrapper" style="height:280px"><canvas id="weightChart"></canvas></div>
     </div>
   </div>
+
+  <!-- ── Obesity by demographics & geography (2026) ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Obesity by Demographics &amp; Geography</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">Adult obesity (BMI ≥ 30) reached <strong style="color:#b8a880">40.3%</strong> in 2021–23. It is not evenly distributed: women are slightly more affected than men, it peaks in middle age, Black and Hispanic adults have the highest rates (Asian adults the lowest), and it is concentrated in the South and Appalachia — West Virginia leads the nation. Average adult BMI has climbed from ~25 (a "normal" reading) in the early 1960s to nearly 30 today.</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">40.3%</div><div class="stat-label">U.S. adults with obesity, 2021–23 (NHANES); ~73% overweight or obese</div></div>
+    <div class="stat-box"><div class="stat-value">West Virginia</div><div class="stat-label">Most obese state — 41.2% of adults (BRFSS 2023)</div></div>
+    <div class="stat-box"><div class="stat-value">52.1%</div><div class="stat-label">Obesity among non-Hispanic Black adults (highest group)</div></div>
+    <div class="stat-box"><div class="stat-value">46.4%</div><div class="stat-label">Obesity at ages 40–59 (highest age band)</div></div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Obesity by Sex &amp; Age, 2021–23</h3>
+      <div class="subtitle">% of U.S. adults with obesity — CDC NHANES. Women edge out men; prevalence peaks in middle age. <a class="evt-cite" href="Sources_and_Citations.html#c1" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="obesityGroupChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Obesity by Race / Ethnicity, 2021–23</h3>
+      <div class="subtitle">% of U.S. adults with obesity — CDC NHANES. Black and Hispanic adults have the highest rates; Asian adults the lowest. <a class="evt-cite" href="Sources_and_Citations.html#c1" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="obesityRaceChart"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Obesity by State, 2023</h3>
+      <div class="subtitle">Adult obesity rate (%) — CDC BRFSS. Highest 8 and lowest 4; 23+ states are now ≥ 35%. <a class="evt-cite" href="Sources_and_Citations.html#c1" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:420px"><canvas id="obesityStateChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Average Adult BMI Over Time</h3>
+      <div class="subtitle">Mean body mass index of U.S. adults (20+) — CDC NHANES. Crossed from "normal" (~25) into "overweight" territory and is nearing 30. <a class="evt-cite" href="Sources_and_Citations.html#c1" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="bmiOverTimeChart"></canvas></div>
+    </div>
+  </div>
+  <div class="data-note">Obesity prevalence by sex, age and race, plus average BMI: CDC NCHS NHANES (measured, August 2021–August 2023; obesity = BMI ≥ 30; ~73% of adults are overweight or obese). By-state rates: CDC Behavioral Risk Factor Surveillance System (BRFSS) 2023 — self-reported, so generally a few points below measured NHANES. Highest state: West Virginia (41.2%); lowest around Colorado / D.C. (~24–25%). Average-BMI series is approximate for the earliest survey periods.</div>
 
   <div class="key-events">
     <h4>Key Timeline Events</h4>
@@ -1750,6 +1788,87 @@
     <div class="data-note">CDC/NCHS, deaths involving "synthetic opioids other than methadone" (T40.4) — overwhelmingly illicitly manufactured fentanyl and analogs. A single death can involve multiple drugs, so categories overlap. 2024 values are provisional and likely undercount due to reporting lag. Year markers: 2013 ≈ 3,105; 2016 ≈ 19,413; 2020 ≈ 56,516; 2021 ≈ 70,601; 2022 ≈ 73,838 (peak); 2023 ≈ 72,776; 2024 ≈ 48,400 (provisional).</div>
   </div>
 
+  <!-- ── Beyond opioids: cocaine, meth, marijuana & other illicit drugs (2026) ── -->
+  <div style="margin-top:44px">
+    <h3 style="font-size:1.05rem;color:#c8973a;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Beyond Opioids — Cocaine, Meth, Marijuana &amp; Other Illicit Drugs</h3>
+    <p style="font-size:0.85rem;color:#888;line-height:1.6;margin-bottom:20px;">The overdose crisis is no longer only about opioids. Cocaine and methamphetamine deaths have surged — increasingly because the drugs are mixed with fentanyl (the "fourth wave") — while heroin collapsed as fentanyl replaced it. On the demand side, the crack-cocaine epidemic peaked in the late 1980s, methamphetamine spread in the 2000s, and marijuana use roughly doubled as states legalized it. Note: many overdose deaths involve more than one drug, so the categories below overlap.</p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-value">~34,900</div><div class="stat-label">Psychostimulant (meth) overdose deaths, 2023</div><div class="stat-change">↑ from ~5,700 in 2015</div></div>
+      <div class="stat-box"><div class="stat-value">~29,400</div><div class="stat-label">Cocaine overdose deaths, 2023</div><div class="stat-change">↑ from ~4,700 in 2011</div></div>
+      <div class="stat-box"><div class="stat-value">~3,980</div><div class="stat-label">Heroin overdose deaths, 2023</div><div class="stat-change good">↓ from ~15,500 peak (2016)</div></div>
+      <div class="stat-box"><div class="stat-value">~62M</div><div class="stat-label">Past-year marijuana users, 2023 (~22% of age 12+)</div></div>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>Overdose Deaths by Drug Type Over Time</h3>
+        <div class="subtitle">Annual U.S. overdose deaths involving each drug — CDC NCHS / NIDA. Deaths often involve multiple drugs (e.g., cocaine + fentanyl), so the lines overlap and sum to more than the total. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper" style="height:340px"><canvas id="odByDrugChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Past-Year Drug Use by Substance, 2023</h3>
+        <div class="subtitle">Americans 12+ who used each substance in the past year (millions) — SAMHSA NSDUH 2023. Marijuana dwarfs all other illicit drugs. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper" style="height:340px"><canvas id="drugUseChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-grid" style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Marijuana — Use &amp; Legalization Over Time</h3>
+        <div class="subtitle">Past-year marijuana use (% of 12+, left axis) and the number of states with legal recreational marijuana (right axis) — NSDUH / state laws. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="marijuanaChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Cocaine Use Over Time — the Crack Era</h3>
+        <div class="subtitle">Past-year cocaine use (% of 12+) — NSDUH / NHSDA. Use peaked in the early 1980s; the crack epidemic (mid-1980s–early 1990s) drove the 1986 Anti-Drug Abuse Act and its 100:1 crack/powder sentencing disparity. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="cocaineHistChart"></canvas></div>
+      </div>
+    </div>
+    <div class="data-note">Overdose deaths by drug: CDC NCHS / NIDA — deaths involving each drug; polysubstance deaths are counted in multiple categories (2023: cocaine ≈ 29,449; psychostimulants/meth ≈ 34,855; heroin ≈ 3,984; synthetic opioids ≈ 72,776). Past-year use: SAMHSA National Survey on Drug Use and Health (NSDUH) 2023. Marijuana legalization: state laws (recreational legal in 24 states + DC by 2024). Cocaine-use history: NSDUH and the earlier National Household Survey on Drug Abuse — pre-2002 figures use different methodology and are approximate; the "crack" subset is no longer separately reported in detail.</div>
+  </div>
+
+  <!-- ── Alcohol by type/region + alcohol & overdose demographics (2026) ── -->
+  <div style="margin-top:44px">
+    <h3 style="font-size:1.05rem;color:#c8973a;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Alcohol by Type &amp; Region — and the Demographics of Drinking &amp; Overdose</h3>
+    <p style="font-size:0.85rem;color:#888;line-height:1.6;margin-bottom:20px;">What Americans drink has shifted — less beer and wine, more spirits — with clear regional patterns (more wine on the coasts, more beer in the Midwest and South). And both heavy drinking and drug overdoses fall unevenly: men, certain age bands, and some racial groups carry far more of the burden.</p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-value">2.48 gal</div><div class="stat-label">Per-capita ethanol, 2023 — spirits rising, beer &amp; wine falling</div></div>
+      <div class="stat-box"><div class="stat-value">~42%</div><div class="stat-label">Beer's share of ethanol (was ~50%); spirits now ~37% and rising</div></div>
+      <div class="stat-box"><div class="stat-value">2.4×</div><div class="stat-label">Male vs. female overdose death rate (44.3 vs 18.3 per 100k, 2023)</div></div>
+      <div class="stat-box"><div class="stat-value">35–44</div><div class="stat-label">Age group with the highest overdose death rate</div></div>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>Alcohol by Type Over Time</h3>
+        <div class="subtitle">Per-capita ethanol by beverage (gallons) — NIAAA apparent consumption. Beer is fading, spirits are rising, wine peaked ~2020. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="alcoholTypeChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Alcohol Type by Region</h3>
+        <div class="subtitle">Share of ethanol from beer / wine / spirits by Census region (approximate) — NIAAA. The West &amp; Northeast drink more wine; the Midwest &amp; South lean beer. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="alcoholRegionChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-grid" style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Heavy Drinking by Demographic</h3>
+        <div class="subtitle">Past-month binge drinking by group (%) — SAMHSA NSDUH. Highest among men and young adults. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="alcoholDemoChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Overdose Death Rate by Race / Ethnicity</h3>
+        <div class="subtitle">Age-adjusted overdose deaths per 100,000 (2022) — CDC. Native American and Black Americans now have the highest rates. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="overdoseRaceChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-grid single" style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Overdose Death Rate by Sex &amp; Age</h3>
+        <div class="subtitle">Overdose deaths per 100,000 by group — CDC. Men die at ~2.4× the female rate; deaths peak at ages 35–44. <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper" style="height:300px"><canvas id="overdoseAgeSexChart"></canvas></div>
+      </div>
+    </div>
+    <div class="data-note">Alcohol by type &amp; region: NIAAA "Apparent Per Capita Alcohol Consumption" surveillance reports (ethanol gallons from beer, wine, spirits; regional shares approximate). Heavy-drinking demographics: SAMHSA NSDUH (past-month binge drinking; men ~28%, women ~17%; highest at ages 18–25). Overdose-death demographics: CDC NCHS (age-adjusted rates per 100,000; 2022/2023 — males 44.3 vs females 18.3; highest by race among Native American and Black Americans; highest age band 35–44). Rates are age-adjusted and approximate; categories follow CDC definitions.</div>
+  </div>
+
   <div class="key-events">
     <h4>Key Timeline Events</h4>
     <div class="events-grid">
@@ -1759,12 +1878,16 @@
       <div class="event-item"><strong>1971</strong> Nixon declares War on Drugs <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>1980</strong> Per capita alcohol peaks at ~2.76 gallons ethanol/yr <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>1984</strong> National Minimum Drinking Age Act (21 years) <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1986</strong> Crack-cocaine epidemic peaks; Anti-Drug Abuse Act creates the 100:1 crack/powder sentencing disparity <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>1995</strong> OxyContin approved; Wave 1 opioid crisis begins <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2010</strong> Wave 2: heroin use surges as Rx opioids restricted <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2012</strong> Colorado &amp; Washington legalize recreational marijuana — 24 states by 2024 <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2010s</strong> Methamphetamine resurges (mostly Mexican-made P2P meth); stimulant deaths climb <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2013</strong> Wave 3: illicit fentanyl enters supply; deaths spike <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2020</strong> COVID isolation drives overdoses to then-record 93,000+ <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2022</strong> Peak: 109,680 overdose deaths <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2023</strong> First annual decline since 2018; 105,007 deaths <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2023–24</strong> Cocaine &amp; meth deaths surge — the fentanyl-mixed "fourth wave" of the overdose crisis <a class="evt-cite" href="Sources_and_Citations.html#c4" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
     </div>
   </div>
 </section>
@@ -3213,6 +3336,226 @@
 </section>
 
 <!-- ══════════════════════════════════════════ GOVERNMENT SPENDING -->
+<!-- ═══════════════════════════════════ FIREARMS ═══════════════════════════════════ -->
+<section id="sect-firearms" class="section">
+  <div class="section-header">
+    <h2>🔫 Firearms</h2>
+    <p>The United States has more civilian firearms than people — an estimated ~466 million guns, about 120 per 100 residents, by far the highest rate on earth. This tab covers the legal side of gun ownership: how many households own guns and how that has changed, the number and types of firearms, concealed-carry permits and the spread of "constitutional" (permitless) carry, the Supreme Court cases that define the right, and the contested data on lawful self-defense and home defense. Figures are presented neutrally; where estimates vary widely by methodology (notably defensive gun use), that is stated plainly.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">~466M</div><div class="stat-label">Estimated civilian firearms (~120 per 100 people — highest on earth)</div></div>
+    <div class="stat-box"><div class="stat-value">42%</div><div class="stat-label">U.S. households owning a gun, 2024 (Gallup)</div><div class="stat-change">vs. 49% in 1959; ~30% own personally</div></div>
+    <div class="stat-box"><div class="stat-value">21.5M</div><div class="stat-label">Active concealed-carry permits; 29 states allow permitless carry</div></div>
+    <div class="stat-box"><div class="stat-value">~5</div><div class="stat-label">Avg. guns per gun-owning household; ~3% of adults own ~50% of all guns</div></div>
+  </div>
+
+  <!-- Row 1: ownership + total firearms -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Household Gun Ownership Over Time</h3>
+      <div class="subtitle">% of U.S. households reporting a gun in the home — Gallup. Fell to a 1999 low (~34%), then stabilized in the low 40s. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="gunOwnChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Estimated Civilian Firearms in the U.S.</h3>
+      <div class="subtitle">Total civilian-owned firearms (millions) — Small Arms Survey / ATF / industry estimates. Roughly doubled since 2000 to ~466M (~120 per 100 people). <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="gunTotalChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2: production by type + stock by type -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>U.S. Firearm Production by Type Over Time</h3>
+      <div class="subtitle">Domestic firearms manufactured per year (millions) — ATF AFMER. Handguns now dominate; rifles spiked after 2012 (modern sporting rifles). <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="gunTypeProdChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Civilian Firearm Stock by Type</h3>
+      <div class="subtitle">Approximate share of the ~466M civilian guns by type — industry estimates. "Modern sporting rifles" (AR-15-style) number ~24–44 million. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:300px"><canvas id="gunTypeStockChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3: concealed carry over time + by state -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Concealed Carry — Permits &amp; Permitless-Carry States</h3>
+      <div class="subtitle">Active concealed-carry permits (millions, left) and the number of "constitutional carry" (permitless) states (right) — CPRC / state laws. Permits leveled off as permitless carry spread. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="gunCarryChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Concealed-Carry Permits by State (Top States)</h3>
+      <div class="subtitle">Approximate active permits by state (millions) — CPRC / state agencies. Many high-permit states have since adopted permitless carry, so new-permit demand has fallen. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="gunPermitStateChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 4: defensive gun use -->
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Defensive Gun Use — Estimates Vary Enormously</h3>
+      <div class="subtitle">Annual lawful defensive gun uses (DGU) by study — the estimate spans ~40× depending on survey method. The CDC has cited a range of "60,000 to 2.5 million" per year. Most DGUs involve brandishing without firing; FBI counts ~300–400 "justifiable homicides" by private citizens with a firearm per year. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:300px"><canvas id="gunDGUChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- SCOTUS cases table -->
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Major Second Amendment Supreme Court Cases <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic" style="font-size:0.7rem">source ↗</a></h3>
+      <div class="subtitle">Landmark rulings defining the legal right to own and carry firearms.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Year</th><th>Case</th><th>Holding</th></tr></thead>
+          <tbody>
+            <tr><td>1939</td><td>United States v. Miller</td><td>Upheld the National Firearms Act's restriction on short-barreled shotguns (militia framing)</td></tr>
+            <tr><td>2008</td><td>District of Columbia v. Heller</td><td>Established an individual right to keep a handgun at home for self-defense; struck DC's handgun ban</td></tr>
+            <tr><td>2010</td><td>McDonald v. City of Chicago</td><td>Applied the Second Amendment to the states (incorporation)</td></tr>
+            <tr><td>2016</td><td>Caetano v. Massachusetts</td><td>The Second Amendment extends to modern arms (here, stun guns)</td></tr>
+            <tr><td>2022</td><td>NYSRPA v. Bruen</td><td>Recognized a right to carry a handgun in public; struck "may-issue" regimes; set a history-and-tradition test</td></tr>
+            <tr><td>2024</td><td>United States v. Rahimi</td><td>Upheld (8–1) disarming people under domestic-violence restraining orders</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-note">Ownership: Gallup household-gun-ownership trend (self-reported; "personal" ownership ~30%). Total firearms &amp; per-capita: Small Arms Survey (2017: ~393M; ~120.5 per 100), ATF, and industry estimates (~466M by the mid-2020s). Production by type: ATF Annual Firearms Manufacturing and Export Report (AFMER). Stock-by-type shares and the modern-sporting-rifle count are industry estimates (NSSF) and approximate. Concealed-carry permits &amp; permitless-carry states: Crime Prevention Research Center (John Lott et al.) and state laws (29 permitless-carry states by mid-2024). Court cases: U.S. Supreme Court opinions. <strong>Defensive gun use is highly contested:</strong> the National Crime Victimization Survey (BJS) yields ~60,000–120,000/yr, CDC pilot surveys ~1 million/yr, and Kleck-Gertz ~2.1–2.5 million/yr; the CDC has cited a "60,000 to 2.5 million" range. Justifiable-homicide counts are FBI UCR/SHR. Verify current figures at the cited sources.</div>
+
+  <!-- ── Manufacturers, calibers, law enforcement & litigation (2026) ── -->
+  <div style="margin-top:44px">
+    <h3 style="font-size:1.05rem;color:#c8973a;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Manufacturers, Calibers, Law Enforcement &amp; Litigation</h3>
+    <p style="font-size:0.85rem;color:#888;line-height:1.6;margin-bottom:20px;">The industry consolidated dramatically: storied names (Remington, Colt, Winchester) went bankrupt or were broken up, while Ruger, Smith &amp; Wesson and Sig Sauer rose to the top. Calibers shifted too — 9mm overtook everything, .40 S&amp;W rose and fell, and the AR-15's 5.56/.223 reshaped rifles. Law enforcement followed a similar arc (.38 revolver → .40 → back to 9mm). And a wave of litigation — capped by the 2005 PLCAA shield and the 2025 Supreme Court ruling for gunmakers against Mexico — defined manufacturer liability.</p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-value">Ruger</div><div class="stat-label">#1 U.S. maker (2023); top 40 makers = ~92% of production</div></div>
+      <div class="stat-box"><div class="stat-value">~46%</div><div class="stat-label">Share of traced crime guns chambered in 9mm (most-traced in every state)</div></div>
+      <div class="stat-box"><div class="stat-value">2×</div><div class="stat-label">Remington bankruptcies (2018 &amp; 2020) — then broken up &amp; sold</div></div>
+      <div class="stat-box"><div class="stat-value">9–0</div><div class="stat-label">2025 SCOTUS ruling (PLCAA) shielding gunmakers from Mexico's suit</div></div>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>Top U.S. Firearm Manufacturers — 2023 Production</h3>
+        <div class="subtitle">Firearms produced (millions) by maker — ATF AFMER 2023. Ruger, Smith &amp; Wesson and Sig Sauer lead. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper" style="height:360px"><canvas id="gunMakerChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Manufacturer Production Over Time</h3>
+        <div class="subtitle">Annual production (millions) — ATF AFMER. Smith &amp; Wesson, Ruger and Sig Sauer rose as Remington collapsed into bankruptcy. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="gunMakerTimeChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-grid" style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Handgun Caliber Trend Over Time</h3>
+        <div class="subtitle">Approximate share of U.S. pistol production by caliber — 9mm now ~60–65%; .40 S&amp;W rose and fell. NSSF/ATF (approximate). <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper"><canvas id="gunCaliberChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Most-Traced "Crime Gun" Calibers, 2023</h3>
+        <div class="subtitle">Share of ATF-traced firearms by caliber — 9mm ≈ 46% (nearly 5× the next). Most-traced makes: Glock, Smith &amp; Wesson, Taurus, Ruger; Glock pistols are the most-traced models. <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+        <div class="chart-wrapper" style="height:320px"><canvas id="gunTraceChart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Most popular by era table -->
+    <div style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Most Popular Firearm &amp; Caliber by Era <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic" style="font-size:0.7rem">source ↗</a></h3>
+        <div class="subtitle">The dominant handgun, rifle and shotgun — and their calibers — in each period (best-sellers / most-produced; approximate).</div>
+        <div style="overflow-x:auto;margin-top:12px">
+          <table class="mini-table">
+            <thead><tr><th>Era</th><th>Top handgun</th><th>Hgun caliber</th><th>Top rifle</th><th>Rifle caliber</th><th>Top shotgun</th><th>Sgun caliber</th></tr></thead>
+            <tbody>
+              <tr><td>1950s–60s</td><td>S&amp;W Model 10 (revolver)</td><td>.38 Special</td><td>Winchester 94 / Rem. 700</td><td>.30-30 / .30-06</td><td>Remington 870 (1950)</td><td>12 gauge</td></tr>
+              <tr><td>1970s–80s</td><td>S&amp;W / Colt revolvers</td><td>.38 / .357 Mag</td><td>Remington 700 (bolt)</td><td>.30-06</td><td>Rem. 870 / Mossberg 500</td><td>12 gauge</td></tr>
+              <tr><td>1990s</td><td>Glock 17/19 (semi-auto shift)</td><td>9mm / .40 S&amp;W</td><td>Ruger 10/22; AR-15 rising</td><td>.22 LR / .223</td><td>Mossberg 500 / 870</td><td>12 gauge</td></tr>
+              <tr><td>2010s</td><td>Glock 19</td><td>9mm</td><td>AR-15 (best-selling rifle)</td><td>5.56 / .223</td><td>Mossberg 500 / 870</td><td>12 gauge</td></tr>
+              <tr><td>2020s</td><td>Sig P320 / Glock 19</td><td>9mm</td><td>AR-15</td><td>5.56 / .223</td><td>Mossberg / Benelli</td><td>12 gauge</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Law enforcement caliber evolution -->
+    <div style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Law-Enforcement Sidearm &amp; Caliber Evolution <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic" style="font-size:0.7rem">source ↗</a></h3>
+        <div class="subtitle">How U.S. police service weapons and calibers changed — from revolvers to polymer 9mm pistols.</div>
+        <div style="overflow-x:auto;margin-top:12px">
+          <table class="mini-table">
+            <thead><tr><th>Era</th><th>Service weapon</th><th>Caliber</th><th>Driver</th></tr></thead>
+            <tbody>
+              <tr><td>Pre-1980s</td><td>Revolvers (S&amp;W Model 10)</td><td>.38 Special</td><td>Standard police sidearm for ~50 years</td></tr>
+              <tr><td>1986–1990</td><td>Shift to semi-autos; FBI adopts 10mm</td><td>9mm → 10mm</td><td>1986 FBI Miami shootout exposes underpowered/under-capacity revolvers</td></tr>
+              <tr><td>1990–2015</td><td>S&amp;W / Glock / Sig pistols</td><td>.40 S&amp;W</td><td>.40 (1990) — 10mm performance in a 9mm-size frame; FBI adopts 1997</td></tr>
+              <tr><td>2015–present</td><td>Glock / Sig polymer pistols (Sig P320 / M17)</td><td>back to 9mm</td><td>FBI returns to 9mm (2015–16): better accuracy, capacity, less wear; Army adopts P320 (2017)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consolidation/bankruptcy + lawsuits -->
+    <div class="chart-grid" style="margin-top:24px">
+      <div class="chart-card">
+        <h3>Consolidations &amp; Bankruptcies <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic" style="font-size:0.7rem">source ↗</a></h3>
+        <div class="subtitle">The reshaping of the U.S. firearms industry.</div>
+        <div style="overflow-x:auto;margin-top:12px">
+          <table class="mini-table">
+            <thead><tr><th>Year</th><th>Company</th><th>Event</th></tr></thead>
+            <tbody>
+              <tr><td>2006</td><td>Winchester (U.S. Repeating Arms)</td><td>New Haven plant closes; brand licensed (Browning/FN; Olin keeps ammo)</td></tr>
+              <tr><td>2007</td><td>Freedom Group (Cerberus)</td><td>Rolls up Remington, Bushmaster, Marlin, DPMS &amp; more</td></tr>
+              <tr><td>2015</td><td>Colt</td><td>Files Chapter 11; restructures</td></tr>
+              <tr><td>2018 &amp; 2020</td><td>Remington Outdoor</td><td>Two bankruptcies; in 2020 broken up &amp; sold to 7 buyers (Marlin → Ruger; ammo → Vista; guns → RemArms)</td></tr>
+              <tr><td>2021</td><td>Colt</td><td>Acquired by CZ (Czech) — Colt CZ Group</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Gun-Industry Lawsuits &amp; Liability <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="Sources for this topic" style="font-size:0.7rem">source ↗</a></h3>
+        <div class="subtitle">Litigation over manufacturer liability for criminal misuse.</div>
+        <div style="overflow-x:auto;margin-top:12px">
+          <table class="mini-table">
+            <thead><tr><th>Year</th><th>Case / Law</th><th>Significance</th></tr></thead>
+            <tbody>
+              <tr><td>1998–2000</td><td>City lawsuits</td><td>~30 cities sue makers over gun-violence costs (mostly dismissed)</td></tr>
+              <tr><td>2005</td><td>PLCAA</td><td>Federal law shields makers/sellers from liability for criminal misuse of lawfully sold guns</td></tr>
+              <tr><td>2019</td><td>Soto v. Bushmaster (Conn.)</td><td>State high court lets Sandy Hook families sue over marketing (CUTPA exception)</td></tr>
+              <tr><td>2022</td><td>Sandy Hook / Remington settlement</td><td>Remington's insurers pay the families $73 million</td></tr>
+              <tr><td>2025</td><td>Smith &amp; Wesson v. Mexico</td><td>U.S. Supreme Court rules 9–0 that PLCAA bars Mexico's ~$10B suit against U.S. gunmakers</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-note">Manufacturer production &amp; market leaders: ATF Annual Firearms Manufacturing and Export Report (AFMER); the top 40 makers produced ~92% of U.S. firearms in 2023. Caliber shares are NSSF/ATF estimates (9mm ≈ 60% of pistols produced 2016–23). Crime-gun traces: ATF National Firearms Commerce &amp; Trafficking Assessment (NFCTA) — 9mm ≈ 46% of 2023 traces; most-traced makes Glock, Smith &amp; Wesson, Taurus, Ruger, HS Produkt; "trace" ≠ proof a gun was used in a crime. Most-popular-by-era and law-enforcement evolution are compiled from best-seller/production data and agency adoptions (approximate). Consolidations/bankruptcies &amp; litigation: court filings and press reporting (PLCAA 2005; <em>Soto v. Bushmaster</em>; Remington's $73M Sandy Hook settlement, 2022; <em>Smith &amp; Wesson Brands v. Estados Unidos Mexicanos</em>, 2025).</div>
+  </div>
+
+  <div class="key-events">
+    <h4>Key Timeline Events</h4>
+    <div class="events-grid">
+      <div class="event-item"><strong>1934</strong> National Firearms Act — taxes/registers machine guns &amp; short-barreled guns after Prohibition violence <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1968</strong> Gun Control Act — licensed dealers, bars certain buyers, after the 1960s assassinations <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1993</strong> Brady Act — federal background checks for dealer sales <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1994–2004</strong> Federal "assault weapons" ban in effect, then expires <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2008</strong> <em>Heller</em> affirms an individual right to a home handgun for self-defense <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2010</strong> <em>McDonald</em> applies the Second Amendment to the states <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2012–2013</strong> Post-Sandy Hook surge — record firearm production and sales <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2020</strong> Record gun sales (~22M NICS checks) amid pandemic &amp; unrest; many first-time buyers <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2022</strong> <em>Bruen</em> establishes a public-carry right and a history-and-tradition test <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2024</strong> Louisiana becomes the 29th permitless-carry state; <em>Rahimi</em> upholds DV-order disarmament <a class="evt-cite" href="Sources_and_Citations.html#c15" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+    </div>
+  </div>
+</section>
+
 <section id="sect-govspend" class="section">
   <div class="section-header">
     <h2>🏛️ Federal Government Spending &amp; National Debt</h2>
@@ -3521,6 +3864,55 @@
   </div>
 
   <div class="data-note">Totals and demographic shares: HUD "2024 Annual Homelessness Assessment Report (AHAR) Part 1: Point-in-Time Estimates." HUD expanded its race and gender categories in 2024, so demographic comparisons to earlier years are imperfect; shares are rounded and a person may fall into more than one category. 2021 PIT data are excluded because COVID-19 prevented many communities from conducting a full unsheltered count. Serious-mental-illness and substance-use shares: HUD AHAR and SAMHSA; chronically homeless and unsheltered subgroups have higher rates than the sheltered population. General-population SMI (~6% of U.S. adults): NIMH.</div>
+
+  <!-- ── Homelessness by state (2026) ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Homelessness by State — Counts, Rates &amp; Change</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">Homelessness is extraordinarily concentrated: California and New York alone hold ~45% of the nation's homeless. But the highest <em>rates</em> tell a different story — Hawaii, New York and D.C. all top ~80 per 10,000, while Mississippi sits at 3.5. The fastest change is recent and dramatic: Illinois nearly tripled in a single year (2023→2024), and — like New York and Massachusetts — was driven by migrant arrivals layered on top of housing costs.</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">~45%</div><div class="stat-label">Share in CA + NY alone (CA 187,084; NY 158,019)</div></div>
+    <div class="stat-box"><div class="stat-value">80.5</div><div class="stat-label">Hawaii — highest rate per 10,000 (Mississippi lowest, 3.5)</div></div>
+    <div class="stat-box"><div class="stat-value">+178%</div><div class="stat-label">Illinois's one-year jump, 2023→2024 (7.3 → 20.3 per 10k)</div></div>
+    <div class="stat-box"><div class="stat-value">22.7</div><div class="stat-label">National rate per 10,000, 2024</div></div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Homeless Population by State, 2024</h3>
+      <div class="subtitle">People experiencing homelessness (thousands), top states — HUD PIT. California &amp; New York dominate the raw count. <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="homelessStateChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Homelessness Rate by State, 2024</h3>
+      <div class="subtitle">People homeless per 10,000 residents — HUD PIT / Census. Highest 10 shown; national ≈ 22.7; lowest is Mississippi (3.5). <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="homelessRateChart"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Rate of Change — Biggest Increases, 2023→2024</h3>
+      <div class="subtitle">One-year % change in homelessness by state — HUD. Migrant arrivals &amp; housing costs drove record jumps; the U.S. rose 18%. <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="homelessChangeChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Selected States Over Time</h3>
+      <div class="subtitle">PIT counts (thousands) — HUD AHAR. California's steady climb, New York's &amp; Illinois's 2023–24 surges, Florida's decline. <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper"><canvas id="homelessStateTimeChart"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Race / Ethnicity by State</h3>
+      <div class="subtitle">Share of each state's homeless population by race/ethnicity (approximate) — HUD AHAR. Composition varies sharply (e.g., NY skews Black; FL more White). <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:320px"><canvas id="homelessRaceStateChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Gender by State</h3>
+      <div class="subtitle">Male vs. female share of each state's homeless population (approximate) — HUD AHAR. States with more family/migrant homelessness (NY) skew less male. <a class="evt-cite" href="Sources_and_Citations.html#c11" target="_blank" rel="noopener" title="Sources for this topic">source ↗</a></div>
+      <div class="chart-wrapper" style="height:320px"><canvas id="homelessGenderStateChart"></canvas></div>
+    </div>
+  </div>
+  <div class="data-note">By-state counts, rates and one-year change: HUD "2024 AHAR Part 1" Point-in-Time estimates and Census population (rate per 10,000). 2024: California 187,084; New York 158,019 (together ~45%); highest rate Hawaii 80.5, New York 80.6, D.C. 80.0 per 10,000; lowest Mississippi 3.5; national 22.7. Largest 2023→2024 increases: Illinois (+178%, 7.3→20.3 per 10k), Massachusetts, New York, Hawaii. Race/ethnicity and gender by state are <em>approximate</em> shares compiled from HUD AHAR CoC data for representative states (HUD's 2024 category changes limit precision); full per-state demographic tables are in the AHAR. Verify current figures at HUD.</div>
 
   <div class="key-events">
     <h4>Key Context</h4>
@@ -4400,7 +4792,7 @@
   <div class="conclusion-heading">What This Dashboard Documents — Tab by Tab</div>
   <p style="font-size:0.82rem;color:#777;margin-bottom:16px">A one-line summary of every topic tab. Each tab has its own charts, a "Key Timeline Events" panel with source links, and data notes; full citations are on the Sources &amp; Citations page.</p>
   <div class="suggest-grid">
-    <div class="suggest-item"><strong>Alcohol &amp; Overdoses</strong><span>Per-capita alcohol use; the three opioid waves; fentanyl deaths and its share of overdoses.</span></div>
+    <div class="suggest-item"><strong>Alcohol &amp; Overdoses</strong><span>Alcohol use (by type &amp; region); opioid waves &amp; fentanyl; cocaine/meth/marijuana; drinking &amp; overdose demographics.</span></div>
     <div class="suggest-item"><strong>Big Tech</strong><span>Market caps, revenue, users, employees, margins, valuation-vs-revenue, IPOs and bankruptcies since 1940.</span></div>
     <div class="suggest-item"><strong>Cancer</strong><span>Incidence &amp; mortality, types, 5-yr survival over time and by stage, screening, and risk by age.</span></div>
     <div class="suggest-item"><strong>Casual Dining</strong><span>Sit-down chains: sales, locations, PE ownership, bankruptcies, prep, ingredients, meal cost.</span></div>
@@ -4410,14 +4802,15 @@
     <div class="suggest-item"><strong>Economics</strong><span>Inflation, purchasing power, income, home prices/affordability, and household debt.</span></div>
     <div class="suggest-item"><strong>Entertainment</strong><span>TV, movies, streaming vs. cable, social media, screen time, and ad spending.</span></div>
     <div class="suggest-item"><strong>Fast Food</strong><span>Industry growth, chain locations, PE ownership, prep, ingredients, and meal cost.</span></div>
+    <div class="suggest-item"><strong>Firearms</strong><span>Ownership, total/per-capita &amp; by type, concealed/permitless carry, manufacturers &amp; calibers, 2A cases, defensive use, and ATF traces.</span></div>
     <div class="suggest-item"><strong>Gov. Spending</strong><span>Spending by category &amp; the debt; top-10 FY2024 programs and a 1940-vs-2024 comparison.</span></div>
     <div class="suggest-item"><strong>Healthcare</strong><span>Household health spending, premiums, hospital &amp; insurer expenditure, and medical debt.</span></div>
-    <div class="suggest-item"><strong>Homeless</strong><span>HUD totals over time, by race and gender, and serious mental illness as a share.</span></div>
+    <div class="suggest-item"><strong>Homeless</strong><span>HUD totals over time, by race &amp; gender, SMI share, and by state (counts, rates, one-year change &amp; demographics).</span></div>
     <div class="suggest-item"><strong>Incarceration</strong><span>Rates by state/city/race, offenses, recidivism, time-served vs. sentence, prison gangs.</span></div>
     <div class="suggest-item"><strong>Marriage &amp; Family</strong><span>Marriage/divorce, age at marriage, fertility, household size, same-sex marriage.</span></div>
     <div class="suggest-item"><strong>Mental Health</strong><span>Depression/anxiety, deinstitutionalization, and common diagnoses over time.</span></div>
     <div class="suggest-item"><strong>Mortality</strong><span>Death rates &amp; causes by age; method of homicide and suicide (kept separate by cause).</span></div>
-    <div class="suggest-item"><strong>Obesity</strong><span>Adult &amp; child obesity rates and average body weight over time.</span></div>
+    <div class="suggest-item"><strong>Obesity</strong><span>Obesity &amp; average weight/BMI over time, plus breakdowns by sex, age, race and state.</span></div>
     <div class="suggest-item"><strong>Pharmaceuticals</strong><span>Rx spending, opioids, DTC ads; drug approvals/recalls and development cost.</span></div>
     <div class="suggest-item"><strong>Politics</strong><span>Every election 1940–2024 (popular + electoral), party ID, turnout, and state-by-state realignment.</span></div>
     <div class="suggest-item"><strong>Poverty</strong><span>Official vs. SPM, by age/race/gender/state, and the economic drivers.</span></div>
@@ -7741,6 +8134,177 @@ mkBar('btValRevChart',
   [40,14,13,13,11,10,4.5],
   [PURPLE,RED,TEAL,GREEN,BLUE,ORANGE,GOLD],
   {unit:'×',axisTitle:'Market cap ÷ revenue (price-to-sales, early 2026)'});
+
+// ═══════════════ SUBSTANCE: beyond opioids (cocaine, meth, marijuana) ═══════════════
+lineChart('odByDrugChart',[1999,2006,2010,2015,2018,2020,2022,2023],
+  [ds('Synthetic opioids (fentanyl)',[730,2707,3007,9580,31335,56516,73838,72776],RED,{width:2.5}),
+   ds('Psychostimulants (meth)',[547,1745,1854,5716,12676,23837,34022,34855],PURPLE,{width:2}),
+   ds('Cocaine',[3822,7448,4183,6784,14666,19447,27569,29449],ORANGE,{width:2}),
+   ds('Heroin',[1960,2088,3036,12989,14996,13165,5871,3984],BLUE,{width:2}),
+   ds('Prescription opioids',[2900,5500,11000,12700,14495,13722,11800,10500],TEAL,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Overdose deaths involving each drug',color:'#555'}}});
+mkBar('drugUseChart',
+  ['Marijuana','Rx pain-reliever misuse','Hallucinogens','Cocaine','Methamphetamine','Heroin'],
+  [61.9,8.6,7.5,5.3,2.6,0.9],
+  GOLD,{horizontal:true,unit:'M',axisTitle:'Past-year users, 2023 (millions, age 12+)'});
+(function(){
+  const ctx=document.getElementById('marijuanaChart'); if(!ctx) return;
+  new Chart(ctx,{ data:{ labels:[2002,2008,2013,2017,2019,2021,2023],
+    datasets:[
+      {type:'line',label:'Past-year marijuana use (% of 12+)',data:[11.0,10.3,12.6,15.3,17.5,19.0,22.0],borderColor:GREEN,backgroundColor:GREEN+'22',fill:true,borderWidth:2.5,tension:0.3,pointRadius:2,yAxisID:'y'},
+      {type:'line',label:'States with legal recreational marijuana',data:[0,0,2,8,11,18,24],borderColor:GOLD,backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],tension:0.2,pointRadius:2,yAxisID:'y1'}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{labels:{color:'#aaa',boxWidth:12,font:{size:10}}},tooltip:{backgroundColor:'#1a1d2e',borderColor:'#3a3a5a',borderWidth:1,titleColor:'#d0c8b0',bodyColor:'#aaa'}},
+      scales:{x:{grid:{color:'#1e1e2e'},ticks:{color:'#666'}},
+        y:{position:'left',min:0,max:30,grid:{color:'#1e1e2e'},ticks:{color:'#888',callback:v=>v+'%'},title:{display:true,text:'Past-year use (%)',color:'#555'}},
+        y1:{position:'right',min:0,max:30,grid:{drawOnChartArea:false},ticks:{color:'#888'},title:{display:true,text:'States legal (recreational)',color:'#555'}}}}});
+})();
+lineChart('cocaineHistChart',[1979,1982,1985,1990,1995,2000,2006,2013,2018,2023],
+  [ds('Past-year cocaine use (% of 12+)',[5.6,5.0,5.1,2.0,1.3,1.5,2.4,1.6,2.0,1.8],ORANGE,{fill:true,width:2.5})],
+  {yAxis:{min:0,max:6,title:{display:true,text:'Past-year cocaine use (%)',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+
+// ═══════════════ FIREARMS ═══════════════
+lineChart('gunOwnChart',[1959,1968,1980,1990,1999,2005,2010,2014,2020,2024],
+  [ds('Households with a gun (%)',[49,50,48,47,34,42,40,42,44,42],GOLD,{fill:true,width:2.5})],
+  {yAxis:{min:0,max:60,title:{display:true,text:'% of U.S. households',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+lineChart('gunTotalChart',[1990,2000,2009,2017,2020,2023,2026],
+  [ds('Civilian firearms (millions)',[200,259,310,393,434,466,500],RED,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Estimated civilian firearms (millions)',color:'#555'}}});
+lineChart('gunTypeProdChart',[2000,2005,2010,2013,2016,2019,2022],
+  [ds('Handguns (pistols + revolvers)',[1.2,1.4,2.3,4.4,5.9,4.7,8.6],GOLD,{width:2.5}),
+   ds('Rifles',[1.6,1.4,1.8,4.0,4.2,2.2,3.0],BLUE,{width:2}),
+   ds('Shotguns',[0.9,0.7,0.9,1.2,0.85,0.55,0.7],GREEN,{width:2})],
+  {yAxis:{min:0,title:{display:true,text:'Firearms produced per year (millions)',color:'#555'}}});
+mkDoughnut('gunTypeStockChart',['Handguns','Rifles','Shotguns'],[45,35,20],[GOLD,BLUE,GREEN]);
+(function(){
+  const ctx=document.getElementById('gunCarryChart'); if(!ctx) return;
+  new Chart(ctx,{ data:{ labels:[2007,2011,2014,2016,2018,2020,2021,2024],
+    datasets:[
+      {type:'line',label:'Concealed-carry permits (millions)',data:[4.6,8,11.1,14.5,17.25,19.5,21.5,21.5],borderColor:GOLD,backgroundColor:GOLD+'22',fill:true,borderWidth:2.5,tension:0.3,pointRadius:2,yAxisID:'y'},
+      {type:'line',label:'Permitless-carry ("constitutional") states',data:[2,4,5,10,13,16,21,29],borderColor:BLUE,backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],tension:0.2,pointRadius:2,yAxisID:'y1'}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{labels:{color:'#aaa',boxWidth:12,font:{size:10}}},tooltip:{backgroundColor:'#1a1d2e',borderColor:'#3a3a5a',borderWidth:1,titleColor:'#d0c8b0',bodyColor:'#aaa'}},
+      scales:{x:{grid:{color:'#1e1e2e'},ticks:{color:'#666'}},
+        y:{position:'left',min:0,max:25,grid:{color:'#1e1e2e'},ticks:{color:'#888'},title:{display:true,text:'Permits (millions)',color:'#555'}},
+        y1:{position:'right',min:0,max:30,grid:{drawOnChartArea:false},ticks:{color:'#888'},title:{display:true,text:'Permitless-carry states',color:'#555'}}}}});
+})();
+mkBar('gunPermitStateChart',
+  ['Florida','Texas','Pennsylvania','Georgia','Indiana','Michigan','Washington','North Carolina','Ohio','Virginia'],
+  [2.6,1.7,1.5,1.1,0.9,0.8,0.7,0.7,0.6,0.6],
+  GOLD,{horizontal:true,unit:'M',axisTitle:'Approx. active concealed-carry permits (millions)'});
+mkBar('gunDGUChart',
+  ['NCVS (BJS survey)','CDC pilot surveys','Kleck–Gertz survey'],
+  [0.1,1.0,2.5],
+  [BLUE,GOLD,RED],
+  {unit:'M',axisTitle:'Estimated defensive gun uses per year (millions) — spans ~40×'});
+
+// ═══════════════ FIREARMS: makers, calibers, traces ═══════════════
+mkBar('gunMakerChart',
+  ['Ruger','Smith & Wesson','Sig Sauer','Savage Arms','Springfield Armory','Palmetto State','Glock (US)','Mossberg','Henry','Heritage'],
+  [1.7,1.6,1.5,0.7,0.6,0.6,0.5,0.5,0.45,0.4],
+  GOLD,{horizontal:true,unit:'M',axisTitle:'Firearms produced, 2023 (millions) — ATF AFMER'});
+lineChart('gunMakerTimeChart',[2000,2008,2013,2016,2019,2022],
+  [ds('Smith & Wesson',[0.2,0.4,1.6,2.0,1.2,1.6],BLUE,{width:2}),
+   ds('Ruger',[0.3,0.4,1.3,2.0,1.5,1.7],GOLD,{width:2}),
+   ds('Sig Sauer',[0.05,0.2,0.5,0.9,1.3,1.5],GREEN,{width:2}),
+   ds('Remington',[1.0,1.2,1.3,0.8,0.3,0.1],RED,{width:2.5,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Firearms produced per year (millions)',color:'#555'}}});
+lineChart('gunCaliberChart',[1995,2000,2007,2012,2016,2020,2023],
+  [ds('9mm',[35,40,42,38,55,62,65],GOLD,{width:2.5}),
+   ds('.40 S&W',[15,22,28,30,20,12,8],RED,{width:2}),
+   ds('.45 ACP',[12,14,15,16,13,11,10],BLUE,{width:2}),
+   ds('.380 ACP',[5,6,8,12,11,10,9],GREEN,{width:2})],
+  {yAxis:{min:0,max:70,title:{display:true,text:'% of U.S. pistol production',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+mkBar('gunTraceChart',
+  ['9mm','.22 LR','.380 ACP','.40 S&W','.38 Special','.45 ACP'],
+  [46,8,8,7,6,6],
+  [GOLD,BLUE,GREEN,RED,PURPLE,TEAL],
+  {unit:'%',axisTitle:'Share of ATF-traced crime guns, 2023 (%)'});
+
+// ═══════════════ OBESITY: demographics & geography ═══════════════
+mkBar('obesityGroupChart',
+  ['Men','Women','Ages 20–39','Ages 40–59','Ages 60+'],
+  [39.2,41.3,35.5,46.4,38.9],
+  [BLUE,PURPLE,TEAL,GOLD,GREEN],
+  {unit:'%',axisTitle:'Adult obesity prevalence, 2021–23 (%)'});
+mkBar('obesityRaceChart',
+  ['Black','Hispanic','White','Asian'],
+  [52.1,46,41,17],
+  [RED,ORANGE,BLUE,TEAL],
+  {unit:'%',axisTitle:'Adult obesity prevalence, 2021–23 (%)'});
+mkBar('obesityStateChart',
+  ['West Virginia','Mississippi','Arkansas','Louisiana','Alabama','Oklahoma','Kentucky','Indiana','— Massachusetts','— Hawaii','— Colorado','— D.C.'],
+  [41.2,40.1,40.0,39.9,39.2,38.5,38.0,37.7,27.0,25.9,25.0,24.3],
+  ['#d05a5a','#d05a5a','#d05a5a','#d05a5a','#d76b5b','#d76b5b','#d76b5b','#d76b5b','#6abf69','#6abf69','#6abf69','#6abf69'],
+  {horizontal:true,unit:'%',axisTitle:'Adult obesity rate, 2023 BRFSS (%)'});
+lineChart('bmiOverTimeChart',[1962,1976,1990,2000,2010,2017,2023],
+  [ds('Average adult BMI',[25.1,25.5,26.5,27.8,28.6,29.5,29.8],GOLD,{fill:true,width:2.5})],
+  {yAxis:{min:24,max:31,title:{display:true,text:'Mean BMI, adults 20+',color:'#555'}}});
+
+// ═══════════════ ALCOHOL: type, region & demographics ═══════════════
+lineChart('alcoholTypeChart',[1970,1980,1990,2000,2010,2020,2023],
+  [ds('Beer',[1.14,1.38,1.34,1.22,1.13,1.10,1.01],GOLD,{width:2.5}),
+   ds('Spirits',[1.11,1.04,0.78,0.71,0.74,0.86,0.92],RED,{width:2.5}),
+   ds('Wine',[0.27,0.34,0.33,0.35,0.39,0.51,0.46],PURPLE,{width:2})],
+  {yAxis:{min:0,title:{display:true,text:'Per-capita ethanol (gallons)',color:'#555'}}});
+mkGroupedBar('alcoholRegionChart',
+  ['Northeast','Midwest','South','West'],
+  [ {label:'Beer',data:[38,48,44,40],color:GOLD},
+    {label:'Wine',data:[26,13,15,28],color:PURPLE},
+    {label:'Spirits',data:[36,39,41,32],color:RED} ],
+  '% of ethanol consumed', 60);
+mkBar('alcoholDemoChart',
+  ['Men','Women','Ages 18–25','Ages 26–49','Ages 50+'],
+  [28,17,29,27,14],
+  [BLUE,PURPLE,TEAL,GOLD,GREEN],
+  {unit:'%',axisTitle:'Past-month binge drinking (%)'});
+mkBar('overdoseRaceChart',
+  ['Native American','Black','White','Hispanic','Asian'],
+  [65,49,34,24,5],
+  [PURPLE,RED,ORANGE,BLUE,TEAL],
+  {unit:'/100k',axisTitle:'Overdose deaths per 100,000 (age-adjusted, 2022)'});
+mkBar('overdoseAgeSexChart',
+  ['Male','Female','Ages 25–34','Ages 35–44','Ages 45–54'],
+  [44.3,18.3,50,62,48],
+  [BLUE,PURPLE,TEAL,GOLD,ORANGE],
+  {unit:'/100k',axisTitle:'Overdose deaths per 100,000'});
+
+// ═══════════════ HOMELESS: by state ═══════════════
+mkBar('homelessStateChart',
+  ['California','New York','Washington','Florida','Massachusetts','Texas','Illinois','Oregon','Arizona','Georgia'],
+  [187.1,158.0,31.6,31.4,29.4,27.4,25.8,22.9,14.7,12.5],
+  GOLD,{horizontal:true,unit:'K',axisTitle:'People experiencing homelessness, 2024 (thousands) — HUD PIT'});
+mkBar('homelessRateChart',
+  ['New York','Hawaii','D.C.','Oregon','Vermont','California','Massachusetts','Washington','Alaska','Maine','— Mississippi'],
+  [80.6,80.5,80.0,54.0,51.0,47.6,42.0,40.0,36.0,30.0,3.5],
+  ['#d05a5a','#d05a5a','#d05a5a','#d76b5b','#d76b5b','#d76b5b','#dd7d5b','#dd7d5b','#dd7d5b','#dd7d5b','#6abf69'],
+  {horizontal:true,unit:'/10k',axisTitle:'Homeless per 10,000 residents, 2024 (national ≈ 22.7)'});
+mkBar('homelessChangeChart',
+  ['Illinois','Massachusetts','New York','Hawaii','U.S. (all)'],
+  [178,58,53,28,18],
+  [RED,ORANGE,GOLD,PURPLE,BLUE],
+  {unit:'%',axisTitle:'Change in homelessness, 2023→2024 (%)'});
+lineChart('homelessStateTimeChart',[2010,2015,2019,2022,2023,2024],
+  [ds('California',[124,115,151,172,181,187],GOLD,{width:2.5}),
+   ds('New York',[63,86,92,74,103,158],RED,{width:2.5}),
+   ds('Florida',[57,36,28,25,30,31],BLUE,{width:2}),
+   ds('Texas',[36,29,25,27,27,28],GREEN,{width:2}),
+   ds('Illinois',[14,13,10,9,9,26],PURPLE,{width:2})],
+  {yAxis:{min:0,title:{display:true,text:'PIT count (thousands)',color:'#555'}}});
+mkStacked('homelessRaceStateChart',
+  ['California','New York','Texas','Florida','U.S.'],
+  [ {label:'White',data:[25,16,35,47,28],color:BLUE},
+    {label:'Black',data:[26,47,33,36,32],color:RED},
+    {label:'Hispanic',data:[36,30,27,13,31],color:ORANGE},
+    {label:'Other',data:[13,7,5,4,9],color:'#8a8a8a'} ],
+  'State');
+mkGroupedBar('homelessGenderStateChart',
+  ['California','New York','Texas','Florida','U.S.'],
+  [ {label:'Male',data:[67,58,63,68,61],color:BLUE},
+    {label:'Female',data:[32,40,36,31,38],color:PURPLE} ],
+  '% of homeless population', 80);
 
 // ═══════════════ CHART ZOOM (click to enlarge) ═══════════════
 let zoomState=null;
