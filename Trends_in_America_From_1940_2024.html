@@ -608,7 +608,9 @@
   </div>
   <nav id="nav">
     <button class="active" onclick="showSection('substance', this)">🍺 Alcohol &amp; Overdoses</button>
+    <button onclick="showSection('bigtech', this)">💻 Big Tech</button>
     <button onclick="showSection('cancer', this)">🔬 Cancer</button>
+    <button onclick="showSection('casualdining', this)">🍽️ Casual Dining</button>
     <button onclick="showSection('crime', this)">🚨 Crime Rates</button>
     <button onclick="showSection('demographics', this)">🌍 Demographics</button>
     <button onclick="showSection('diet', this)">🌽 Diet &amp; Nutrition</button>
@@ -628,6 +630,8 @@
     <button onclick="showSection('poverty', this)">📉 Poverty</button>
     <button onclick="showSection('religion', this)">✝️ Religion</button>
     <button onclick="showSection('sex', this)">🏳️‍🌈 Sex &amp; Partners</button>
+    <button onclick="showSection('tariffs', this)">🏷️ Tariffs</button>
+    <button onclick="showSection('transportation', this)">🚗 Transportation</button>
     <button onclick="showSection('vaccines', this)">💉 Vaccines</button>
     <button onclick="showSection('conclusion', this)">📖 Conclusion</button>
   </nav>
@@ -952,6 +956,149 @@
 </section>
 
 <!-- ═══════════════════════════════════ CANCER ═══════════════════════════════════ -->
+<!-- ═══════════════════════════════════ BIG TECH ═══════════════════════════════════ -->
+<section id="sect-bigtech" class="section">
+  <div class="section-header">
+    <h2>💻 Big Tech</h2>
+    <p>From IBM's punch-card machines and HP's Palo Alto garage (1939) to a handful of companies worth trillions, technology has become the most valuable industry on earth. The arc runs through mainframes (IBM), the PC (Microsoft, Intel, Apple, Dell), the internet (Amazon, Google), mobile &amp; social (Apple, Meta), and now AI (Nvidia). Below: market caps, revenue/sales, user adoption, employees, IPOs, profitability, valuation-vs-revenue, and the bankruptcies and restructurings that cleared the field — including the giants of one era that vanished in the next.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">~$5.2T</div><div class="stat-label">Nvidia market cap — first company to cross $5T (2025)</div></div>
+    <div class="stat-box"><div class="stat-value">~$22T</div><div class="stat-label">"Magnificent Seven" combined market cap (2025)</div><div class="stat-change">↑ ~18× since 2012</div></div>
+    <div class="stat-box"><div class="stat-value">$638B</div><div class="stat-label">Amazon revenue, 2024 — largest tech by sales</div></div>
+    <div class="stat-box"><div class="stat-value">~1.55M</div><div class="stat-label">Amazon employees — largest tech workforce</div></div>
+  </div>
+
+  <!-- Row 1: market cap now + over time -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Largest Tech Companies by Market Cap (2026)</h3>
+      <div class="subtitle">Market capitalization, $ trillions — exchange data, early 2026. AI demand vaulted Nvidia to the top.</div>
+      <div class="chart-wrapper" style="height:360px"><canvas id="btCapChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Market Cap Over Time</h3>
+      <div class="subtitle">$ trillions — the rise of the giants. Microsoft's 2000 peak, the 2010s smartphone boom, and Nvidia's AI surge.</div>
+      <div class="chart-wrapper"><canvas id="btCapTimeChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2: revenue over time + top revenue -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Revenue Over Time — IBM's Reign &amp; the Successors</h3>
+      <div class="subtitle">Annual revenue, $ billions. IBM led for decades before Microsoft, Apple, Amazon and Google overtook it.</div>
+      <div class="chart-wrapper"><canvas id="btRevenueChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Top Tech Companies by Revenue — 2024</h3>
+      <div class="subtitle">Annual revenue, $ billions (FY2024; Nvidia FY ending Jan 2025) — company filings.</div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="btTopRevChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3: users + employees -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>User Adoption — Platform Monthly Active Users</h3>
+      <div class="subtitle">Monthly active users, billions (2024) — company reports. Meta's apps and Google's YouTube each reach billions.</div>
+      <div class="chart-wrapper" style="height:360px"><canvas id="btUsersChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Employee Count</h3>
+      <div class="subtitle">Full-time employees, thousands (2024) — company filings. Amazon's logistics workforce dwarfs the others; IBM shown for historical scale.</div>
+      <div class="chart-wrapper" style="height:360px"><canvas id="btEmployeesChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 4: profitability + valuation-to-revenue -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Profitability — Net Profit Margin, 2024</h3>
+      <div class="subtitle">Net income ÷ revenue (%) — company filings. Software/chip firms (Nvidia, Microsoft, Meta) are far more profitable per dollar than retail-heavy Amazon.</div>
+      <div class="chart-wrapper"><canvas id="btMarginChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Valuation vs. Revenue (Market Cap ÷ Revenue)</h3>
+      <div class="subtitle">Price-to-sales multiple (early 2026 market cap ÷ latest revenue). High multiples (Nvidia) price in expected AI growth; Amazon trades far lower.</div>
+      <div class="chart-wrapper"><canvas id="btValRevChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- IPO / milestones table -->
+  <div style="margin-top:28px">
+    <div class="chart-card">
+      <h3>Founding, IPOs &amp; Milestones</h3>
+      <div class="subtitle">When the major tech companies started and went public.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Company</th><th>Founded</th><th>IPO</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>IBM</td><td>1911</td><td>1916 (NYSE)</td><td>Mainframes; dominated computing into the 1980s</td></tr>
+            <tr><td>Hewlett-Packard</td><td>1939</td><td>1957</td><td>Founded in a Palo Alto garage — "the birthplace of Silicon Valley"</td></tr>
+            <tr><td>Texas Instruments</td><td>1930</td><td>1953</td><td>Co-invented the integrated circuit (1958)</td></tr>
+            <tr><td>Intel</td><td>1968</td><td>1971</td><td>The microprocessor (4004, 1971); "Intel Inside"</td></tr>
+            <tr><td>Apple</td><td>1976</td><td>Dec 1980</td><td>PC → iPod/iPhone; first $1T (2018) and $3T (2024) company</td></tr>
+            <tr><td>Microsoft</td><td>1975</td><td>Mar 1986</td><td>DOS/Windows/Office; cloud (Azure)</td></tr>
+            <tr><td>Dell</td><td>1984</td><td>1988</td><td>Direct-sales PCs; went private 2013, re-listed 2018</td></tr>
+            <tr><td>Cisco</td><td>1984</td><td>1990</td><td>Networking; briefly the world's most valuable company (2000)</td></tr>
+            <tr><td>Amazon</td><td>1994</td><td>May 1997</td><td>E-commerce → AWS cloud</td></tr>
+            <tr><td>Nvidia</td><td>1993</td><td>Jan 1999</td><td>GPUs → AI; first $5T company (2025)</td></tr>
+            <tr><td>Google / Alphabet</td><td>1998</td><td>Aug 2004</td><td>Search &amp; ads; Android, YouTube, cloud, AI</td></tr>
+            <tr><td>Tesla</td><td>2003</td><td>2010</td><td>EVs; joined the Magnificent Seven</td></tr>
+            <tr><td>Meta / Facebook</td><td>2004</td><td>May 2012</td><td>Social; multiple billion-user apps</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bankruptcies / restructuring table -->
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Bankruptcies, Acquisitions &amp; Restructurings</h3>
+      <div class="subtitle">The giants of one era often vanish in the next — through failure, fire-sale, or reinvention.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Year</th><th>Company</th><th>Event</th></tr></thead>
+          <tbody>
+            <tr><td>1992</td><td>Wang Laboratories</td><td>Chapter 11 — the word-processing giant collapses as PCs take over</td></tr>
+            <tr><td>1998</td><td>Digital Equipment (DEC)</td><td>Acquired by Compaq (~$9.6B) — minicomputer era ends</td></tr>
+            <tr><td>2000–01</td><td>Pets.com, Webvan &amp; hundreds more</td><td>Dot-com crash wipes out ~$5T in market value</td></tr>
+            <tr><td>2001</td><td>AOL–Time Warner</td><td>$165B merger; ~$99B writedown (2002); unwound by 2009</td></tr>
+            <tr><td>2002</td><td>Compaq</td><td>Merged into HP (~$25B)</td></tr>
+            <tr><td>2009</td><td>Nortel Networks</td><td>Bankruptcy — once worth ~$250B</td></tr>
+            <tr><td>2010</td><td>Sun Microsystems</td><td>Acquired by Oracle (~$7.4B)</td></tr>
+            <tr><td>2013–14</td><td>Nokia (phones), BlackBerry</td><td>Mobile leaders collapse; Nokia handsets sold to Microsoft (written off ~$7.6B)</td></tr>
+            <tr><td>2017</td><td>Yahoo</td><td>Core business sold to Verizon (~$4.5B; was ~$125B in 2000)</td></tr>
+            <tr><td>2022</td><td>Twitter → X</td><td>Elon Musk buys for $44B; ~80% of staff cut</td></tr>
+            <tr><td>2024–25</td><td>Intel</td><td>Major restructuring — foundry split-off, mass layoffs, dropped from the Dow</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-note">Market caps: exchange data (early 2026; the Magnificent Seven = Nvidia, Apple, Alphabet, Microsoft, Amazon, Meta, Tesla). Revenue, employees, and profit margins: company 10-K/annual filings (FY2024; Nvidia FY ending Jan 2025; figures rounded). Monthly active users: company reports (2024) — definitions differ by platform and may double-count users across a company's apps. Valuation-to-revenue uses early-2026 market cap ÷ latest annual revenue. Market caps are volatile and change daily — treat them as a snapshot. IPO/milestone and bankruptcy details from company history and press reporting. Verify current figures at the cited sources.</div>
+
+  <div class="key-events">
+    <h4>Key Timeline Events</h4>
+    <div class="events-grid">
+      <div class="event-item"><strong>1939</strong> Hewlett-Packard founded in a Palo Alto garage — Silicon Valley begins <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1964</strong> IBM System/360 — mainframe standard cements IBM's dominance <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1971</strong> Intel ships the 4004 — the first commercial microprocessor <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1981</strong> IBM PC launches; Microsoft supplies DOS — the PC era begins <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1997–2000</strong> Dot-com bubble inflates and bursts; ~$5T in value wiped out <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2007</strong> Apple iPhone launches — the smartphone era and the mobile economy <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2018</strong> Apple becomes the first $1 trillion U.S. company <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2022</strong> ChatGPT launches; the generative-AI boom begins <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2023–24</strong> Nvidia's AI-chip surge; the Magnificent Seven drive most market gains <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2025</strong> Nvidia becomes the first company ever valued at $5 trillion <a class="evt-cite" href="Sources_and_Citations.html#c14" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+    </div>
+  </div>
+</section>
+
 <section id="sect-cancer" class="section">
   <div class="section-header">
     <h2>Cancer Rates</h2>
@@ -1709,6 +1856,15 @@
     </div>
   </div>
 
+  <!-- ── Meal cost over time (2026 addition) ── -->
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Fast-Food Meal Cost Over Time — Nominal vs. Inflation-Adjusted</h3>
+      <div class="subtitle">McDonald's Big Mac price (a standard proxy for fast-food meal cost), nominal $ vs. 2024 $ — Economist Big Mac Index / BLS. The nominal price rose ~12× since 1968; in real terms ~40%. A full combo meal now averages ~$11.50 (2026).</div>
+      <div class="chart-wrapper"><canvas id="ffMealChart"></canvas></div>
+    </div>
+  </div>
+
   <div class="data-note">Revenue figures: NRA/Statista QSR sales data. Location counts: NRA Restaurant Industry Outlook, IBISWorld, individual chain annual reports. Ingredient data compiled from FDA GRAS lists, chain ingredient disclosures, and academic food science literature. "Centralized prep" estimates derived from industry literature and chain operational disclosures. Chains marked "privately held" (In-N-Out, Chick-fil-A, Five Guys, Raising Cane's) have not been acquired by PE firms.</div>
 
   <div class="key-events" style="margin-top:24px">
@@ -1744,6 +1900,143 @@
       <div class="event-item"><strong>2020</strong> Inspire Brands acquires Dunkin' Brands ($11.3B); COVID reshapes drive-thru dominance <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2023</strong> Roark Capital acquires Subway for ~$9.6B — largest restaurant acquisition ever <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
       <div class="event-item"><strong>2025</strong> RFK Jr. "Make America Healthy Again" drives pressure on artificial dyes; several chains announce dye removal <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CASUAL DINING ═══════════════════════════════════ -->
+<section id="sect-casualdining" class="section">
+  <div class="section-header">
+    <h2>Casual Dining: Boom, Buyouts &amp; Bust</h2>
+    <p>The sit-down chain — the "bar and grill," the themed steakhouse, the endless breadsticks — boomed from the 1990s into the 2000s, then entered a long slide often called the "casual dining recession." Squeezed between cheaper fast-casual upstarts, third-party delivery, and rising costs, traffic at full-service chains has fallen for a decade. Private equity accelerated the reckoning: firms bought chains, loaded them with debt and sale-leaseback deals, and several later collapsed into bankruptcy (Red Lobster and TGI Fridays both filed Chapter 11 in 2024). Meanwhile the food itself shifted — like fast food — toward centrally prepped, frozen and par-cooked components reheated on site, even as menus advertise "made fresh."</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">2024</div><div class="stat-label">Texas Roadhouse overtakes Olive Garden as the #1 U.S. casual chain</div></div>
+    <div class="stat-box"><div class="stat-value">2</div><div class="stat-label">Iconic chains bankrupt in 2024 — Red Lobster &amp; TGI Fridays (Ch. 11)</div></div>
+    <div class="stat-box"><div class="stat-value">270→160</div><div class="stat-label">TGI Fridays U.S. locations, 2022→2025</div><div class="stat-change">↓ ~55% decline</div></div>
+    <div class="stat-box"><div class="stat-value">~150→~22</div><div class="stat-label">Marie Callender's restaurants — near cessation</div></div>
+  </div>
+
+  <!-- Row 1: segment + chain sales -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>U.S. Full-Service Restaurant Sales Over Time</h3>
+      <div class="subtitle">Nominal $ billions — National Restaurant Association. Casual dining is the largest slice; note the COVID-2020 crater and the nominal (not inflation-adjusted) rebound.</div>
+      <div class="chart-wrapper"><canvas id="cdSalesChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Casual Chains by U.S. System-Wide Sales (~2024)</h3>
+      <div class="subtitle">Approximate annual U.S. sales by chain ($B) — Technomic / company reports. Texas Roadhouse now leads the segment.</div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="cdChainSalesChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2: locations over time -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Chains in Decline &amp; Bankruptcy — U.S. Locations</h3>
+      <div class="subtitle">U.S. unit counts over time (approx.) — company filings / Technomic. Red Lobster &amp; TGI Fridays cratered in 2024; Marie Callender's and Fuddruckers are near total cessation.</div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="cdDeclineChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Chains Growing or Holding — U.S. Locations</h3>
+      <div class="subtitle">U.S. unit counts over time (approx.). Texas Roadhouse, LongHorn and Buffalo Wild Wings expanded while the segment overall shrank.</div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="cdGrowthChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3: prep + ingredients -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Prep Shift: Central Commissary vs. In-Restaurant</h3>
+      <div class="subtitle">Estimated % of menu prepared centrally/off-site (frozen, par-cooked, sous-vide, commissary) then reheated/assembled on site — industry estimate; counters "made fresh" marketing.</div>
+      <div class="chart-wrapper"><canvas id="cdPrepChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Artificial / Synthetic Ingredient Load</h3>
+      <div class="subtitle">Estimated % of menu items containing synthetic additives, dyes, or artificial preservatives — note the recent "clean-label" partial reversal.</div>
+      <div class="chart-wrapper"><canvas id="cdIngredientsChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Ownership / PE table -->
+  <div style="margin-top:28px">
+    <div class="chart-card">
+      <h3>Private Equity &amp; Corporate Ownership</h3>
+      <div class="subtitle">Who owns the casual chains — and how private-equity buyouts and debt shaped their fate.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Chain</th><th>Founded</th><th>Current owner / parent</th><th>Ownership history</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Red Lobster</td><td>1968</td><td>Fortress Investment Group (2024)</td><td>General Mills → Darden → Golden Gate Capital (2014, $2.1B) → Thai Union stake</td><td>Ch. 11 (May 2024); ~545 US</td></tr>
+            <tr><td>TGI Fridays</td><td>1965</td><td>Lenders / TriArtisan (post-2024)</td><td>Carlson → Sentinel Capital + TriArtisan (2014)</td><td>Ch. 11 (Nov 2024); ~160 US</td></tr>
+            <tr><td>Chili's</td><td>1975</td><td>Brinker International — public (NYSE: EAT)</td><td>Brinker International (public)</td><td>Strong turnaround 2024–25</td></tr>
+            <tr><td>Olive Garden</td><td>1982</td><td>Darden Restaurants — public (NYSE: DRI)</td><td>General Mills → Darden (spun off 1995)</td><td>Stable; ~900 US</td></tr>
+            <tr><td>LongHorn Steakhouse</td><td>1981</td><td>Darden Restaurants — public</td><td>RARE Hospitality → Darden (2007)</td><td>Growing; ~570</td></tr>
+            <tr><td>Texas Roadhouse</td><td>1993</td><td>Public (NASDAQ: TXRH)</td><td>Founder-led; IPO 2004</td><td>#1 casual chain 2024; ~700</td></tr>
+            <tr><td>Outback Steakhouse</td><td>1988</td><td>Bloomin' Brands — public (NASDAQ: BLMN)</td><td>Bain Capital + Catterton take-private (2007, ~$3.2B) → re-IPO 2012</td><td>~690; slow decline</td></tr>
+            <tr><td>Buffalo Wild Wings</td><td>1982</td><td>Inspire Brands (Roark Capital)</td><td>Public → Roark/Inspire (2018, $2.9B)</td><td>~1,250</td></tr>
+            <tr><td>California Pizza Kitchen</td><td>1985</td><td>Former lenders (post-2020)</td><td>Golden Gate Capital (2011, ~$470M) → Ch. 11 (2020)</td><td>Emerged 2020; ~150</td></tr>
+            <tr><td>P.F. Chang's</td><td>1993</td><td>TriArtisan + Paulson &amp; Co. (2019)</td><td>Centerbridge Partners (2012, $1.1B) → TriArtisan (2019, ~$700M)</td><td>~190 US</td></tr>
+            <tr><td>The Cheesecake Factory</td><td>1978</td><td>Public (NASDAQ: CAKE)</td><td>Founder-led (public 1992)</td><td>Stable; ~215</td></tr>
+            <tr><td>Red Robin</td><td>1969</td><td>Public (NASDAQ: RRGB)</td><td>Public; activist-investor pressure</td><td>Struggling; closing ~70</td></tr>
+            <tr><td>Marie Callender's</td><td>1948</td><td>Perkins &amp; Marie Callender's (private)</td><td>Multiple bankruptcies (2011, 2019)</td><td>Near cessation; ~22</td></tr>
+            <tr><td>Fuddruckers</td><td>1980</td><td>Black Titan / N. Perkins (2021)</td><td>Luby's → wound down 2021</td><td>Near cessation; ~30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bankruptcies / closures table -->
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Bankruptcies, Mass Closures &amp; Cessation</h3>
+      <div class="subtitle">Major casual-dining failures — several traceable to debt loaded on by private-equity owners.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Year</th><th>Chain</th><th>Event</th></tr></thead>
+          <tbody>
+            <tr><td>2011</td><td>Marie Callender's</td><td>Parent Perkins &amp; Marie Callender's files Chapter 11; restaurant count collapses over the 2010s</td></tr>
+            <tr><td>2020</td><td>California Pizza Kitchen</td><td>Chapter 11 (COVID + Golden Gate debt); emerges late 2020 owned by lenders</td></tr>
+            <tr><td>2021</td><td>Fuddruckers</td><td>Owner Luby's liquidates and winds down operations; Fuddruckers assets sold — near cessation</td></tr>
+            <tr><td>2024 (May)</td><td>Red Lobster</td><td>Chapter 11; ~99 restaurants closed; blamed losses on Thai Union's "Endless Shrimp" deal</td></tr>
+            <tr><td>2024 (Nov)</td><td>TGI Fridays</td><td>Chapter 11 citing ~$37M debt; U.S. count falls from ~270 toward ~160; UK arm collapses</td></tr>
+            <tr><td>2024–25</td><td>Red Robin</td><td>~$77.5M net loss; announces closure of ~70 underperforming locations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Meal cost over time (2026 addition) ── -->
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Casual-Dining Meal Cost Over Time — Nominal vs. Inflation-Adjusted</h3>
+      <div class="subtitle">Average casual-dining check per person, nominal $ vs. 2024 $ — Technomic / NRA (approximate). Nominal checks more than doubled since 1990; in real terms they have stayed roughly flat (~$22–24), with a recent uptick.</div>
+      <div class="chart-wrapper"><canvas id="cdMealChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="data-note">Segment sales: National Restaurant Association (full-service category, nominal). Chain sales and U.S. unit counts: Technomic Top 500 and company filings — figures are approximate and compiled across years; "U.S. locations" excludes international units. Ownership and deal values: company announcements and press reporting (Bloomberg, Restaurant Dive, NRN, CNBC). "Central prep" and "artificial ingredient" shares are industry estimates (not audited menu counts), included to illustrate direction, not precise levels. Bankruptcy details from court filings and contemporaneous reporting. Verify current figures against the cited sources.</div>
+
+  <div class="key-events" style="margin-top:24px">
+    <h4>Key Timeline Events</h4>
+    <div class="events-grid">
+      <div class="event-item"><strong>1968</strong> Red Lobster founded (Lakeland, FL); later the anchor of General Mills' restaurant arm <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1982</strong> Olive Garden opens; Darden builds the casual-dining template <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1990s–2000s</strong> Casual-dining boom — Chili's, Applebee's, Outback, TGI Fridays saturate the suburbs <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2007</strong> Bain Capital + Catterton take Outback's parent (OSI/Bloomin' Brands) private for ~$3.2B <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2011</strong> Golden Gate Capital buys California Pizza Kitchen; Marie Callender's parent files Chapter 11 <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2012</strong> Centerbridge takes P.F. Chang's private (~$1.1B); Bloomin' Brands re-IPOs <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2014</strong> Darden sells Red Lobster to Golden Gate Capital ($2.1B); TGI Fridays sold to Sentinel + TriArtisan <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2015</strong> "Casual dining recession" sets in — full-service traffic begins a multi-year decline <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2018</strong> Roark Capital's Inspire Brands buys Buffalo Wild Wings ($2.9B) <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2020</strong> COVID-19 devastates dine-in; California Pizza Kitchen files Chapter 11 <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2021</strong> Luby's winds down; Fuddruckers all but disappears <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2024</strong> Red Lobster (May) and TGI Fridays (Nov) both file Chapter 11; Texas Roadhouse becomes the #1 casual chain <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2025</strong> Red Robin closes ~70 locations; TGI Fridays shrinks further as it restructures <a class="evt-cite" href="Sources_and_Citations.html#c5" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
     </div>
   </div>
 </section>
@@ -2984,6 +3277,42 @@
 
   <div class="data-note">Federal spending data: OMB Historical Tables (Table 3.1 — outlays as % of GDP by function; Table 7.1 — federal debt). National debt: U.S. Treasury Fiscal Data / TreasuryDirect; OMB Table 7.1. GDP figures: Bureau of Economic Analysis (BEA). Household counts: U.S. Census Bureau Current Population Survey. CPI deflator: BLS CPI-U annual averages (base: 2023 = 304.7). "Other Mandatory" includes income security programs (SNAP, EITC, child nutrition, housing assistance), veterans benefits, federal employee retirement, agriculture supports, and COVID-19 relief legislation (2020–21). Defense figures include Department of Defense, Department of Energy nuclear weapons programs, and veterans benefits are excluded (included in Other Mandatory). Net interest figures are gross interest minus intragovernmental interest receipts. Spending category allocations reflect OMB functional classification and may differ slightly from CBO presentations.</div>
 
+  <!-- ── Top programs + 1940 vs 2024 (2026 addition) ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Top Programs &amp; the 1940 → 2024 Transformation</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">In 1940 the federal government spent about <strong style="color:#b8a880">$9.5 billion</strong> (~9.8% of GDP) on a budget dominated by New Deal relief, a defense build-up, veterans, and interest — with essentially no entitlements. In 2024 it spent about <strong style="color:#b8a880">$6.75 trillion</strong> (~23% of GDP), now dominated by Social Security, health programs, and interest. Below: the top programs today, how the biggest lines grew over time, and a direct 1940-vs-2024 comparison.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">$9.5B</div><div class="stat-label">Total federal outlays, 1940 (~9.8% of GDP)</div></div>
+    <div class="stat-box"><div class="stat-value">$6.75T</div><div class="stat-label">Total federal outlays, 2024 (~23% of GDP)</div><div class="stat-change">↑ ~710× nominal</div></div>
+    <div class="stat-box"><div class="stat-value">$1.46T</div><div class="stat-label">Social Security — largest single program, 2024 (~22%)</div></div>
+    <div class="stat-box"><div class="stat-value">$882B</div><div class="stat-label">Net interest, 2024 — now exceeds defense &amp; Medicare</div></div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Top 10 Federal Programs by Spending — FY2024</h3>
+      <div class="subtitle">Approximate FY2024 outlays by major program/function ($B) — CBO / OMB / Treasury. Net interest now ranks #2, above national defense and Medicare.</div>
+      <div class="chart-wrapper" style="height:400px"><canvas id="fedTop10Chart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>1940 vs. 2024 — Share of the Federal Budget</h3>
+      <div class="subtitle">% of total outlays by category — OMB Historical Tables. Entitlements (Social Security + health) went from ~0% to ~44%; the New Deal / defense / relief mix of 1940 was transformed.</div>
+      <div class="chart-wrapper" style="height:400px"><canvas id="fed1940v2024Chart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>The Biggest Programs Over Time (Nominal $)</h3>
+      <div class="subtitle">Federal outlays by program, nominal $ billions — OMB / CBO. Social Security, Medicare and Medicaid grew from nothing into the core of the budget; interest is surging again.</div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="fedProgramsOverTimeChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="data-note">Top-program figures are approximate FY2024 outlays grouped by OMB budget function; some categories overlap and a few (income security, education) swing year to year due to one-time and student-loan accounting. Net interest FY2024 ≈ $882B (now above national defense ≈ $874B and Medicare ≈ $848B net); Medicaid ≈ $618B; Veterans ≈ $325B. 1940 totals from OMB Historical Tables (total outlays $9.47B; ~9.8% of GDP); 2024 ≈ $6.75T (~23% of GDP). The over-time program values are nominal (not inflation-adjusted). Sources: OMB Historical Tables 3.1 / 6.1, CBO Monthly Budget Review (FY2024), U.S. Treasury Financial Report (FY2024). Verify current figures at the cited sources.</div>
+
   <div class="key-events" style="margin-top:28px">
     <h3>Key Fiscal Milestones</h3>
     <div class="event-item"><strong>1935</strong> Social Security Act signed — first major federal entitlement; payroll-tax-funded from the start <a class="evt-cite" href="Sources_and_Citations.html#c10" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
@@ -3326,6 +3655,345 @@
     </div>
   </div>
 </section>
+<!-- ═══════════════════════════════════ TARIFFS ═══════════════════════════════════ -->
+<section id="sect-tariffs" class="section">
+  <div class="section-header">
+    <h2>🏷️ Tariffs &amp; Trade Duties</h2>
+    <p>For most of the 1800s, tariffs (customs duties on imports) were the <em>main</em> source of federal revenue — 50% to 90% of the budget. The 1913 income tax ended that, and for a century tariffs faded to under 2% of revenue and ~1–2% average rates. That reversed abruptly in 2025: sweeping new tariffs pushed the average rate to ~14.5% — the highest since the 1930s — and customs revenue to a record ~$195 billion. In February 2026 the Supreme Court struck down the broadest ("reciprocal," IEEPA-based) tariffs, while industry-specific Section 232 tariffs (steel, aluminum, autos) remained and a 10% across-the-board duty was re-imposed under a different statute. Below: revenue and rates over time, the import categories that form the tariff base, and a timeline of who imposed tariffs — Congress or the President.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">~$195B</div><div class="stat-label">Customs duties, FY2025 (record) — 3.7% of federal revenue</div><div class="stat-change">↑ from $77B in FY2024</div></div>
+    <div class="stat-box"><div class="stat-value">~14.5%</div><div class="stat-label">Average tariff rate, 2025 (highest since ~1934)</div><div class="stat-change">↑ from ~2.5% in 2024</div></div>
+    <div class="stat-box"><div class="stat-value">50–90%</div><div class="stat-label">Tariffs' share of federal revenue before 1913</div></div>
+    <div class="stat-box"><div class="stat-value">Feb 2026</div><div class="stat-label">Supreme Court strikes IEEPA tariffs; Section 232 (steel/aluminum/autos) remain</div></div>
+  </div>
+
+  <!-- Row 1: revenue + share of federal revenue -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Customs (Tariff) Revenue Over Time</h3>
+      <div class="subtitle">Federal customs duties collected, nominal $ billions — U.S. Treasury / OMB. Note the 2018–19 step-up and the 2025 surge to a record ~$195B.</div>
+      <div class="chart-wrapper"><canvas id="tarRevenueChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Tariffs as a Share of Federal Revenue</h3>
+      <div class="subtitle">Customs duties as % of total federal receipts — OMB. Dominant before the 1913 income tax, marginal for a century, ticking up again in 2025.</div>
+      <div class="chart-wrapper"><canvas id="tarShareChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2: average rate + imports by category -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Average U.S. Tariff Rate Over Time</h3>
+      <div class="subtitle">Duties as % of <em>all</em> imports (effective rate) — USITC / Census. Smoot-Hawley (1930) peaked at ~19.8% on all imports (~59% on dutiable goods); 2025 reached ~14.5%, the highest in ~90 years.</div>
+      <div class="chart-wrapper"><canvas id="tarRateChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>The Tariff Base — U.S. Goods Imports by Industry, 2024</h3>
+      <div class="subtitle">Value of imports by category ($B) — U.S. Census trade data. Tariffs apply to these flows; machinery, electronics and vehicles dominate.</div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="tarImportsChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Sector tariff table -->
+  <div style="margin-top:28px">
+    <div class="chart-card">
+      <h3>Tariffs by Industry / Sector (as of mid-2026)</h3>
+      <div class="subtitle">Major product-specific tariffs and the legal authority behind them. Rates change frequently and are subject to litigation.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Sector / goods</th><th>Tariff</th><th>Authority</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Steel</td><td>25% → 50% (2025)</td><td>Section 232 (national security)</td><td>In effect</td></tr>
+            <tr><td>Aluminum</td><td>10% → 25–50%</td><td>Section 232</td><td>In effect</td></tr>
+            <tr><td>Automobiles &amp; parts</td><td>25%</td><td>Section 232</td><td>In effect</td></tr>
+            <tr><td>Chinese goods (lists 1–4)</td><td>7.5–25%; up to 100% on EVs</td><td>Section 301 (unfair trade)</td><td>In effect</td></tr>
+            <tr><td>Solar panels, washing machines</td><td>Safeguard duties</td><td>Section 201</td><td>In effect</td></tr>
+            <tr><td>"Reciprocal" / country-wide</td><td>10–50% (varied by country)</td><td>IEEPA (emergency powers)</td><td>Struck down Feb 2026 (SCOTUS)</td></tr>
+            <tr><td>Across-the-board replacement</td><td>10% (→ proposed 15%)</td><td>Section 122</td><td>Imposed Feb 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imposers timeline table -->
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Who Imposed Tariffs — Acts &amp; Actions Over Time</h3>
+      <div class="subtitle">Major tariff legislation (Congress) and executive actions (President), and the shift of tariff-setting power from the legislature to the executive after 1934.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Year</th><th>Act / Action</th><th>Imposer</th><th>Branch</th></tr></thead>
+          <tbody>
+            <tr><td>1789</td><td>Tariff Act of 1789 — first major U.S. law</td><td>Congress (Washington)</td><td>Legislative</td></tr>
+            <tr><td>1828</td><td>"Tariff of Abominations"</td><td>Congress (J.Q. Adams)</td><td>Legislative</td></tr>
+            <tr><td>1861</td><td>Morrill Tariff</td><td>Congress (Lincoln era)</td><td>Legislative</td></tr>
+            <tr><td>1890</td><td>McKinley Tariff</td><td>Congress (Harrison)</td><td>Legislative</td></tr>
+            <tr><td>1913</td><td>Underwood Tariff + federal income tax (16th Amendment) — tariffs cut</td><td>Congress (Wilson)</td><td>Legislative</td></tr>
+            <tr><td>1922</td><td>Fordney-McCumber Tariff</td><td>Congress (Harding)</td><td>Legislative</td></tr>
+            <tr><td>1930</td><td>Smoot-Hawley Tariff — deepened the Depression</td><td>Congress (Hoover)</td><td>Legislative</td></tr>
+            <tr><td>1934</td><td>Reciprocal Trade Agreements Act — delegates tariff power to the President</td><td>Congress → President (FDR)</td><td>Legislative → Executive</td></tr>
+            <tr><td>1947</td><td>GATT — multilateral tariff cuts</td><td>President (Truman)</td><td>Executive</td></tr>
+            <tr><td>1962 / 1974</td><td>Trade Expansion Act (§232) / Trade Act (§201, §301) — bases for modern tariffs</td><td>Congress (Kennedy / Ford)</td><td>Legislative</td></tr>
+            <tr><td>1994–95</td><td>NAFTA / WTO — broad liberalization</td><td>Congress + President (Clinton)</td><td>Both</td></tr>
+            <tr><td>2002 / 2009</td><td>Steel safeguard (§201) / China tire tariffs (§421)</td><td>President (G.W. Bush / Obama)</td><td>Executive</td></tr>
+            <tr><td>2018</td><td>§232 steel &amp; aluminum; §301 China tariffs</td><td>President Trump</td><td>Executive</td></tr>
+            <tr><td>2024</td><td>§301 increases on Chinese EVs, solar, steel</td><td>President Biden</td><td>Executive</td></tr>
+            <tr><td>2025</td><td>"Reciprocal" tariffs (IEEPA) + §232 expansion — average rate ~14.5%</td><td>President Trump</td><td>Executive</td></tr>
+            <tr><td>2026 (Feb)</td><td>SCOTUS strikes IEEPA tariffs (6–3); §232 remain; 10% imposed under §122</td><td>Supreme Court / President Trump</td><td>Judicial / Executive</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-note">Revenue &amp; share of federal receipts: U.S. Treasury Monthly Treasury Statement &amp; OMB Historical Tables (FY2024 customs ≈ $77B; FY2025 ≈ $195B, ~3.7% of receipts). Average tariff rate: USITC &amp; Census (duties ÷ import value, all imports; dutiable-goods rates are higher — Smoot-Hawley peaked ~59% on dutiable goods, ~19.8% on all imports). Imports by category: U.S. Census Bureau trade data, 2024 (HS sections; approximate). Rates and the sector table are as of mid-2026 and change frequently; the Feb 20, 2026 Supreme Court ruling (6–3) invalidated the IEEPA "reciprocal" tariffs (with possible importer refunds) while leaving Section 232 tariffs in place. Pre-1913 revenue-share figures are historical estimates. Verify current figures at the cited sources, as tariff policy is actively evolving.</div>
+
+  <div class="key-events" style="margin-top:24px">
+    <h4>Key Timeline Events</h4>
+    <div class="events-grid">
+      <div class="event-item"><strong>1789</strong> The second law ever passed by Congress is a tariff — funding the new government <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1828</strong> "Tariff of Abominations" inflames North-South tensions; nullification crisis <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1890s</strong> McKinley &amp; Dingley tariffs — high-protection era; tariffs ~50% of federal revenue <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1913</strong> 16th Amendment &amp; income tax — tariffs cease to be the main revenue source <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1930</strong> Smoot-Hawley raises rates to ~20% (all imports); trading partners retaliate; trade collapses <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1934</strong> Reciprocal Trade Agreements Act shifts tariff-setting power to the President <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1947–1995</strong> GATT then the WTO — decades of falling tariffs; average rate sinks below 2% <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2018</strong> Trump §232 steel/aluminum and §301 China tariffs — first big modern reversal <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2025</strong> Sweeping "reciprocal" tariffs; average rate hits ~14.5%; customs revenue records ~$195B <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2026 (Feb)</strong> Supreme Court strikes down IEEPA tariffs (6–3); §232 tariffs remain; 10% §122 duty imposed <a class="evt-cite" href="Sources_and_Citations.html#c13" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TRANSPORTATION ═══════════════════════════════════ -->
+<section id="sect-transportation" class="section">
+  <div class="section-header">
+    <h2>🚗 Transportation &amp; the American Automobile</h2>
+    <p>The car reshaped America — where people live, how cities are built, and how they spend. From ~32 million registered vehicles in 1940 to ~284 million in 2024, the U.S. became the most motorized society on earth. Below: vehicles on the road (cars, motorcycles, buses), vehicles per household, prices, the best-sellers and dominant body styles of each era, weight and fuel-economy trends, miles driven, insurance costs, the shift from internal-combustion to electric, automaker sales and market share, and the long contest between domestic (Detroit) and foreign brands.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">~284M</div><div class="stat-label">Registered vehicles, 2024 (vs. ~32M in 1940)</div></div>
+    <div class="stat-box"><div class="stat-value">~1.8</div><div class="stat-label">Vehicles per U.S. household</div></div>
+    <div class="stat-box"><div class="stat-value">$49,740</div><div class="stat-label">Average new-vehicle price, Dec 2024 (KBB)</div><div class="stat-change">↑ from ~$24K in 2000</div></div>
+    <div class="stat-box"><div class="stat-value">8.1%</div><div class="stat-label">EV share of new sales, 2024 (≈10% incl. plug-in hybrids)</div></div>
+  </div>
+
+  <!-- Row 1: fleet + per household -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Registered Vehicles Over Time</h3>
+      <div class="subtitle">Millions of registered vehicles — total (left axis) and motorcycles (right axis) — FHWA Highway Statistics. Buses add ~1M (school + transit); scooters/mopeds are a small share of motorcycle registrations.</div>
+      <div class="chart-wrapper"><canvas id="trVehiclesChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Vehicles Per Household</h3>
+      <div class="subtitle">Average vehicles available per U.S. household — Census / EIA. Rose with suburbanization; ~8% of households still have none.</div>
+      <div class="chart-wrapper"><canvas id="trPerHouseholdChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 2: sales + market share -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>U.S. Light-Vehicle Sales Per Year</h3>
+      <div class="subtitle">New light vehicles sold, millions — Wards/BEA. Note the 2009 recession trough (~10.4M) and the ~17.5M 2016 peak.</div>
+      <div class="chart-wrapper"><canvas id="trSalesChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Automaker U.S. Market Share — 2024</h3>
+      <div class="subtitle">Share of ~16.0M U.S. light-vehicle sales by manufacturer group (approx.) — company reports / Cox Automotive.</div>
+      <div class="chart-wrapper" style="height:360px"><canvas id="trShareChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3: domestic vs foreign + body style -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Domestic (Detroit Big Three) vs. Foreign Brands</h3>
+      <div class="subtitle">Share of U.S. sales — GM + Ford + Chrysler/Stellantis vs. all foreign-headquartered brands. Note: many "foreign" vehicles are now built in U.S. plants (transplants).</div>
+      <div class="chart-wrapper"><canvas id="trImportChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Body Style Shift: Sedan → SUV → Truck</h3>
+      <div class="subtitle">Share of new U.S. sales by body style — cars/sedans, SUVs/crossovers, pickups/vans. Sedans collapsed from ~80% (1980) to single digits; SUVs/crossovers now dominate.</div>
+      <div class="chart-wrapper"><canvas id="trStyleChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 4: best sellers + price -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Best-Selling Vehicles — 2024</h3>
+      <div class="subtitle">U.S. units sold (thousands) — company reports. Ford F-Series leads as a nameplate; the Toyota RAV4 became the best-selling single model for the first time.</div>
+      <div class="chart-wrapper" style="height:380px"><canvas id="trBestSellersChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Average New-Vehicle Price Over Time</h3>
+      <div class="subtitle">Average new-car transaction price — KBB / BEA — shown in both nominal $ and inflation-adjusted 2024 $. In real terms prices roughly tripled since 1940 (nominal ~60×) and have outpaced general inflation since ~2010.</div>
+      <div class="chart-wrapper"><canvas id="trPriceChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 5: weight + mpg -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Average New-Vehicle Weight</h3>
+      <div class="subtitle">Average curb weight of new light-duty vehicles (lbs) — EPA Automotive Trends. Fell after the 1970s oil crises, then rose steadily with SUVs/trucks.</div>
+      <div class="chart-wrapper"><canvas id="trWeightChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Average Fuel Economy (Real-World MPG)</h3>
+      <div class="subtitle">EPA real-world new-vehicle fuel economy (mpg). Jumped after 1975 CAFE standards, stalled as SUVs grew, then hit record highs (~27 mpg).</div>
+      <div class="chart-wrapper"><canvas id="trMpgChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 6: VMT + insurance -->
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Total Miles Driven (VMT)</h3>
+      <div class="subtitle">Total U.S. vehicle-miles traveled, billions — FHWA. Per-capita VMT peaked ~10,117 miles in 2004 and is ~9,900 today; total dipped sharply in 2020 (COVID).</div>
+      <div class="chart-wrapper"><canvas id="trVmtChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Average Auto Insurance Premium</h3>
+      <div class="subtitle">Average annual auto-insurance expenditure — NAIC / Insurance Information Institute — in nominal and inflation-adjusted 2024 $. Real premiums were roughly flat for two decades, then spiked in 2023–24. Full-coverage estimates are higher (~$2,300–2,700 in 2024, Bankrate).</div>
+      <div class="chart-wrapper"><canvas id="trInsuranceChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 7: EV vs ICE -->
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Electric vs. Internal-Combustion — Share of New Sales</h3>
+      <div class="subtitle">% of new U.S. light-vehicle sales — battery-electric (BEV) and BEV + plug-in hybrid — Argonne/EIA/ICCT. The remainder is internal-combustion and conventional hybrids. EVs are still ~2% of all vehicles on the road.</div>
+      <div class="chart-wrapper" style="height:300px"><canvas id="trEvChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ── Foreign-brand adoption — 2026 addition ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Foreign-Brand Adoption — From the Beetle to Today</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">Foreign brands went from a novelty (the VW Beetle was the main import in the 1960s) to the majority of U.S. sales. Japanese makers (Toyota, Honda, Nissan) surged after the 1970s oil crises; Korean brands (Hyundai-Kia) climbed from near-zero to ~11% by the 2020s; German luxury (BMW, Mercedes, Audi) and Japanese luxury (Lexus, Acura, Infiniti) built durable footholds. Exotics (Ferrari, Aston Martin, Lamborghini) sell in the hundreds-to-few-thousand per year, while some old imports faded entirely — MG left the U.S. around 1980, and Fiat exited in 1983, returned in 2011, and is again near-zero.</p>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Foreign-Brand U.S. Market Share Over Time</h3>
+      <div class="subtitle">% of U.S. sales by brand (approx.) — Wards / company reports. The VW Beetle peaked ~7% in 1970; Japanese then Korean brands drove the long rise.</div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="trForeignChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Luxury &amp; Exotic Brands — U.S. Sales, 2024</h3>
+      <div class="subtitle">U.S. units sold (thousands), 2024 — company reports. Exotics are tiny by comparison: Ferrari ~3.5K, Bentley ~3.5K, Lamborghini ~3K, Aston Martin ~1.2K, Rolls-Royce ~1.2K.</div>
+      <div class="chart-wrapper" style="height:340px"><canvas id="trLuxuryChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ── EV deep-dive (GM EV1 → Tesla) — 2026 addition ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Electric Vehicles — From the GM EV1 to Tesla &amp; the Mass Market</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">The modern EV era began with the <strong style="color:#b8a880">GM EV1</strong> (1996) — the first mass-produced electric car from a major automaker in ~90 years (~1,100 leased, 70–90-mile range), famously discontinued and mostly crushed by 2003. Electric cars were revived by Tesla: the Roadster (2008), Model S (2012), and the mass-market Model 3 (2017) and Model Y (2020). EVs reached ~8% of new sales and ~2% of all vehicles on the road by the mid-2020s — while Tesla's once-dominant share fell below half as competitors arrived.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">1996</div><div class="stat-label">GM EV1 — first modern mass-produced EV (~1,100 leased)</div></div>
+    <div class="stat-box"><div class="stat-value">~633K</div><div class="stat-label">Tesla U.S. sales, 2024 (from ~3K in 2012)</div></div>
+    <div class="stat-box"><div class="stat-value">~49%</div><div class="stat-label">Tesla share of U.S. EV market, 2024 (from ~75–80%)</div><div class="stat-change">↓ as competition grows</div></div>
+    <div class="stat-box"><div class="stat-value">~5.5M</div><div class="stat-label">EVs on U.S. roads, 2025 (~1.9% of all vehicles)</div></div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Tesla U.S. Sales Over Time</h3>
+      <div class="subtitle">Estimated Tesla U.S. deliveries (thousands) — company reports / registrations. From the Model S (2012) to the Model 3/Y mass market; 2024 dipped amid competition.</div>
+      <div class="chart-wrapper"><canvas id="trTeslaChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Tesla Share of the U.S. EV Market</h3>
+      <div class="subtitle">% of U.S. EV sales that are Tesla — once ~75–80%, now under half as legacy automakers and startups enter.</div>
+      <div class="chart-wrapper"><canvas id="trTeslaShareChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Electric Vehicles on U.S. Roads (Cumulative)</h3>
+      <div class="subtitle">Estimated EVs (BEV + plug-in hybrid) in operation, millions — EIA / Argonne. Surpassed 2M in 2021; ~5–6M (~1.9% of all vehicles) by 2025.</div>
+      <div class="chart-wrapper" style="height:300px"><canvas id="trEvFleetChart"></canvas></div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Electric Vehicle Milestones</h3>
+      <div class="subtitle">Key EV models from the EV1 to today.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Year</th><th>Model</th><th>Significance</th></tr></thead>
+          <tbody>
+            <tr><td>1996–99</td><td>GM EV1</td><td>First modern mass-produced EV from a major automaker; ~1,100 leased; discontinued &amp; mostly crushed by 2003</td></tr>
+            <tr><td>1997</td><td>Toyota RAV4 EV; Honda EV Plus</td><td>Early compliance EVs under California's ZEV mandate</td></tr>
+            <tr><td>2008</td><td>Tesla Roadster</td><td>First highway-legal lithium-ion EV; launches Tesla</td></tr>
+            <tr><td>2010</td><td>Nissan Leaf; Chevy Volt</td><td>First mass-market BEV (Leaf) and plug-in hybrid (Volt)</td></tr>
+            <tr><td>2012</td><td>Tesla Model S</td><td>Long-range luxury EV proves the category</td></tr>
+            <tr><td>2016</td><td>Chevy Bolt EV</td><td>Affordable 200+ mile BEV</td></tr>
+            <tr><td>2017</td><td>Tesla Model 3</td><td>Mass-market inflection — EVs go mainstream</td></tr>
+            <tr><td>2020</td><td>Tesla Model Y</td><td>Crossover; becomes the world's best-selling EV</td></tr>
+            <tr><td>2021–22</td><td>Ford Mustang Mach-E &amp; F-150 Lightning; Rivian</td><td>Legacy &amp; startup EVs scale; electric pickups arrive</td></tr>
+            <tr><td>2023–24</td><td>Tesla Cybertruck; broad legacy lineups</td><td>Competition surges; Tesla's U.S. share falls below 50%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top vehicle / style by era table -->
+  <div style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Top Vehicles &amp; Dominant Styles by Era</h3>
+      <div class="subtitle">The best-selling vehicles and the body style that defined each period.</div>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table class="mini-table">
+          <thead><tr><th>Era</th><th>Best-seller(s)</th><th>Dominant style</th></tr></thead>
+          <tbody>
+            <tr><td>1950s</td><td>Chevrolet Bel Air / full-size Chevrolet</td><td>Full-size chrome sedan; tailfins</td></tr>
+            <tr><td>1960s</td><td>Chevrolet Impala; Ford Mustang (debut 1964)</td><td>Full-size sedan; muscle &amp; "pony" cars</td></tr>
+            <tr><td>1970s</td><td>Oldsmobile Cutlass; VW Beetle, Honda Civic, Toyota Corolla (oil crises)</td><td>Personal-luxury coupe ↔ economy compact</td></tr>
+            <tr><td>1980s</td><td>Ford Escort / Olds Cutlass Ciera; minivan born (Chrysler 1984)</td><td>Front-wheel-drive sedan; the minivan</td></tr>
+            <tr><td>1990s</td><td>Ford Taurus → Ford F-Series; Ford Explorer</td><td>Midsize sedan giving way to the SUV</td></tr>
+            <tr><td>2000s</td><td>Ford F-150 (#1 vehicle); Toyota Camry (#1 car)</td><td>Full-size pickup; midsize sedan</td></tr>
+            <tr><td>2010s</td><td>Ford F-Series; Toyota Camry; RAV4 &amp; CR-V surge</td><td>Pickup + the crossover takeover</td></tr>
+            <tr><td>2020s</td><td>Ford F-Series (nameplate); Toyota RAV4 (#1 model 2024); Tesla Model Y</td><td>Crossover SUV, pickup &amp; the electric vehicle</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-note">Registered vehicles, VMT: U.S. DOT Federal Highway Administration (FHWA) Highway Statistics. Vehicles per household: U.S. Census / EIA Residential &amp; household travel surveys. New-vehicle prices: Kelley Blue Book (Cox Automotive) average transaction price; BEA for historical. Sales &amp; market share: Wards Intelligence, Cox Automotive, company reports (2024 totals ≈16.0M light vehicles; shares approximate, of ~16.0M). Weight &amp; fuel economy: EPA Automotive Trends Report (real-world). Insurance: NAIC Auto Insurance Database &amp; Insurance Information Institute (average expenditure); full-coverage averages (Bankrate) are higher. EV share: Argonne National Laboratory, EIA, ICCT. Body-style and domestic-vs-foreign shares are approximate and compiled across sources. Figures are nominal unless noted; verify current values at the cited sources.</div>
+
+  <div class="key-events" style="margin-top:24px">
+    <h4>Key Timeline Events</h4>
+    <div class="events-grid">
+      <div class="event-item"><strong>1908</strong> Ford Model T launches; 1913 moving assembly line makes cars affordable <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1956</strong> Interstate Highway Act — 41,000 miles of freeway reshape America around the car <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1965</strong> Ralph Nader's <em>Unsafe at Any Speed</em>; 1966 launches federal auto-safety regulation <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1973–79</strong> Oil crises — Americans flock to fuel-efficient Japanese imports; 1975 CAFE standards enacted <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1984</strong> Chrysler minivan invents the family-hauler category <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>1990s</strong> SUV boom begins (Ford Explorer 1990); light trucks start displacing cars <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2008–09</strong> Auto-industry crisis; GM &amp; Chrysler bankruptcies and federal bailout; sales crater to ~10.4M <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2012</strong> Tesla Model S launches the modern EV era <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2017–21</strong> Trucks &amp; SUVs surpass 80% of new sales; most automakers drop sedans <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+      <div class="event-item"><strong>2024</strong> EVs hit ~8% of new sales (~10% with PHEVs); RAV4 becomes the #1 single model; insurance premiums spike <a class="evt-cite" href="Sources_and_Citations.html#c12" target="_blank" rel="noopener" title="View the sources behind this topic">source ↗</a></div>
+    </div>
+  </div>
+</section>
+
 <section id="sect-conclusion" class="section">
   <div class="section-header">
     <h2>📖 Conclusion: Eight Decades of American Change</h2>
@@ -6793,6 +7461,216 @@ mkBar('cancerAgeChart',
   ['<20','20–34','35–44','45–54','55–64','65–74','75–84','85+'],
   [1.0,2.9,5.7,13.6,24.3,25.4,18.7,8.3],
   TEAL, {unit:'%', axisTitle:'% of new cancer diagnoses by age group (SEER)'});
+
+// ═══════════════ CASUAL DINING ═══════════════
+lineChart('cdSalesChart',
+  [1970,1980,1990,2000,2010,2015,2019,2020,2022,2024],
+  [ds('U.S. full-service restaurant sales ($B)',[20,45,90,150,200,260,340,240,380,410],GOLD,{fill:true,width:2.5})],
+  { yAxis:{ min:0, title:{display:true,text:'Full-service restaurant sales (NRA, nominal $B)',color:'#555'} } });
+mkBar('cdChainSalesChart',
+  ['Texas Roadhouse','Olive Garden',"Chili's",'Outback','Buffalo Wild Wings','Cheesecake Factory','LongHorn','Red Lobster','Red Robin',"P.F. Chang's"],
+  [5.5,5.2,4.5,4.1,4.0,3.4,2.9,2.0,1.3,1.2],
+  GOLD, {horizontal:true, unit:'B', axisTitle:'U.S. system-wide sales, ~2024 ($ billions, approx.)'});
+lineChart('cdDeclineChart',
+  [1995,2000,2005,2010,2015,2019,2022,2024],
+  [ds('Red Lobster',[700,690,680,700,705,700,650,545],RED,{width:2}),
+   ds('TGI Fridays',[280,420,560,580,480,390,270,160],ORANGE,{width:2}),
+   ds('Red Robin',[150,200,330,440,530,560,520,490],GOLD,{width:2}),
+   ds('California Pizza Kitchen',[80,150,200,260,210,200,170,150],PURPLE,{width:2}),
+   ds("Marie Callender's",[150,145,120,90,50,35,28,22],TEAL,{width:2}),
+   ds('Fuddruckers',[200,215,250,180,120,90,50,30],'#8a8a8a',{width:2})],
+  { yAxis:{ min:0, title:{display:true,text:'U.S. locations',color:'#555'} } });
+lineChart('cdGrowthChart',
+  [1995,2000,2005,2010,2015,2019,2022,2024],
+  [ds('Texas Roadhouse',[5,80,230,350,450,580,640,700],RED,{width:2}),
+   ds('Olive Garden',[470,480,560,720,840,870,890,900],GREEN,{width:2}),
+   ds("Chili's",[480,760,1050,1250,1300,1250,1170,1180],GOLD,{width:2}),
+   ds('LongHorn Steakhouse',[120,200,290,370,480,520,550,570],BLUE,{width:2}),
+   ds('Buffalo Wild Wings',[50,170,350,730,1080,1200,1240,1250],ORANGE,{width:2}),
+   ds('Cheesecake Factory',[20,40,100,150,195,210,210,215],PURPLE,{width:2})],
+  { yAxis:{ min:0, title:{display:true,text:'U.S. locations',color:'#555'} } });
+lineChart('cdPrepChart',
+  [1990,2000,2010,2020,2024],
+  [ds('% of menu prepared centrally / off-site',[25,40,55,68,72],ORANGE,{fill:true,width:2.5})],
+  { yAxis:{ min:0, max:100, title:{display:true,text:'Estimated % centrally prepped',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+lineChart('cdIngredientsChart',
+  [1990,2000,2010,2018,2024],
+  [ds('% of menu items with synthetic additives / dyes / preservatives',[40,55,62,60,55],RED,{fill:true,width:2.5})],
+  { yAxis:{ min:0, max:100, title:{display:true,text:'Estimated % of menu items',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+
+// ═══════════════ GOV SPENDING: top programs + 1940 vs 2024 ═══════════════
+mkBar('fedTop10Chart',
+  ['Social Security','Net interest','National defense','Medicare','Medicaid','Income security','Veterans','Federal retirement','Transportation','Education & training'],
+  [1461,882,874,848,618,420,325,190,126,120],
+  GOLD, {horizontal:true, unit:'B', axisTitle:'FY2024 outlays ($ billions, approx.) — total ≈ $6,750B'});
+mkGroupedBar('fed1940v2024Chart',
+  ['Defense','Net interest','Social Security','Health (Medicare+Medicaid)','Income security','Veterans','Other'],
+  [ {label:'1940 (of $9.5B)', data:[17.5,9.5,0.3,0,16,6,50.7], color:BLUE},
+    {label:'2024 (of $6.75T)', data:[13,13,22,22,8,5,17], color:GOLD} ],
+  '% of total federal outlays', 55);
+lineChart('fedProgramsOverTimeChart',
+  [1940,1960,1980,2000,2010,2020,2024],
+  [ds('Social Security',[0.03,11,118,409,707,1090,1461],GOLD,{width:2.5}),
+   ds('National defense',[1.7,48,134,294,694,714,874],RED,{width:2.5}),
+   ds('Medicare',[0,0,35,197,452,776,848],BLUE,{width:2.5}),
+   ds('Medicaid',[0,0,14,117,273,458,618],GREEN,{width:2}),
+   ds('Net interest',[0.9,6.9,52,223,196,345,882],PURPLE,{width:2,dash:[5,3]})],
+  { yAxis:{ min:0, title:{display:true,text:'Federal outlays (nominal $ billions)',color:'#555'} } });
+
+// ═══════════════ TARIFFS ═══════════════
+lineChart('tarRevenueChart',
+  [1900,1913,1930,1940,1960,1980,2000,2010,2018,2020,2022,2024,2025],
+  [ds('Customs duty revenue ($B, nominal)',[0.23,0.32,0.59,0.35,1.1,7.2,19.9,25.3,41,69,100,77,195],GOLD,{fill:true,width:2.5})],
+  { yAxis:{ min:0, title:{display:true,text:'Customs duties collected ($B, nominal)',color:'#555'} } });
+lineChart('tarShareChart',
+  [1800,1850,1900,1910,1920,1930,1940,1960,1980,2000,2018,2024,2025],
+  [ds('Tariffs as % of federal revenue',[88,90,41,49,5,14,6,1.1,1.4,1.0,2.0,1.6,3.7],RED,{fill:true,width:2.5})],
+  { yAxis:{ min:0, max:100, title:{display:true,text:'% of total federal revenue',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+lineChart('tarRateChart',
+  [1900,1910,1925,1932,1945,1960,1980,2000,2017,2024,2025],
+  [ds('Average tariff rate — all imports (%)',[27,20,13,19.8,9,7,3,1.6,1.4,2.5,14.5],BLUE,{fill:true,width:2.5})],
+  { yAxis:{ min:0, max:30, title:{display:true,text:'Duties ÷ all imports (%)',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+mkBar('tarImportsChart',
+  ['Machinery (incl. computers)','Electrical machinery / electronics','Vehicles & parts','Mineral fuels (oil)','Pharmaceuticals','Precision instruments','Plastics','Apparel & textiles','Furniture & bedding','Iron & steel'],
+  [531,486,391,251,213,110,95,90,85,55],
+  GOLD,{horizontal:true,unit:'B',axisTitle:'U.S. goods imports, 2024 ($ billions) — the tariff base'});
+
+// ═══════════════ TRANSPORTATION ═══════════════
+(function(){
+  const ctx=document.getElementById('trVehiclesChart'); if(!ctx) return;
+  new Chart(ctx,{ data:{ labels:[1940,1950,1960,1970,1980,1990,2000,2010,2020,2023],
+    datasets:[
+      {type:'line',label:'Total registered vehicles (M)',data:[32,49,74,108,156,189,221,242,276,284],borderColor:GOLD,backgroundColor:GOLD+'22',fill:true,borderWidth:2.5,tension:0.3,pointRadius:2,yAxisID:'y'},
+      {type:'line',label:'Motorcycles (M)',data:[0.4,0.5,0.6,2.8,5.7,4.3,4.3,8.0,8.3,8.6],borderColor:BLUE,backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],tension:0.3,pointRadius:2,yAxisID:'y1'}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{labels:{color:'#aaa',boxWidth:12,font:{size:10}}},tooltip:{backgroundColor:'#1a1d2e',borderColor:'#3a3a5a',borderWidth:1,titleColor:'#d0c8b0',bodyColor:'#aaa'}},
+      scales:{x:{grid:{color:'#1e1e2e'},ticks:{color:'#666'}},
+        y:{position:'left',min:0,max:300,grid:{color:'#1e1e2e'},ticks:{color:'#888'},title:{display:true,text:'Total vehicles (millions)',color:'#555'}},
+        y1:{position:'right',min:0,max:12,grid:{drawOnChartArea:false},ticks:{color:'#888'},title:{display:true,text:'Motorcycles (millions)',color:'#555'}}}}});
+})();
+lineChart('trPerHouseholdChart',[1960,1970,1980,1990,2000,2010,2020,2023],
+  [ds('Vehicles per household',[1.03,1.16,1.31,1.55,1.78,1.86,1.83,1.83],TEAL,{fill:true,width:2.5})],
+  {yAxis:{min:0,max:2.2,title:{display:true,text:'Average vehicles per household',color:'#555'}}});
+lineChart('trSalesChart',[1980,1985,1990,2000,2005,2009,2016,2019,2020,2023,2024],
+  [ds('U.S. light-vehicle sales (millions)',[11.5,15.7,13.9,17.4,16.9,10.4,17.5,17.0,14.5,15.5,16.0],RED,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'New light vehicles sold (millions)',color:'#555'}}});
+mkBar('trShareChart',
+  ['GM','Toyota','Ford','Hyundai-Kia','Honda','Stellantis','Nissan','Subaru','Tesla','VW'],
+  [16.9,14.6,13.0,10.6,8.8,8.1,5.8,4.2,3.9,2.4],
+  GOLD,{horizontal:true,unit:'%',axisTitle:'Share of U.S. light-vehicle sales, 2024 (approx.)'});
+lineChart('trImportChart',[1955,1965,1975,1985,1995,2005,2015,2024],
+  [ds('Detroit Big Three (GM+Ford+Chrysler)',[95,90,82,72,73,57,45,38],BLUE,{width:2.5}),
+   ds('Foreign-headquartered brands',[5,10,18,28,27,43,55,62],RED,{width:2.5})],
+  {yAxis:{min:0,max:100,title:{display:true,text:'% of U.S. sales',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+mkStacked('trStyleChart',
+  ['1980','1990','2000','2010','2015','2020','2024'],
+  [ {label:'Cars / sedans',data:[80,72,55,52,45,30,20],color:BLUE},
+    {label:'SUVs / crossovers',data:[2,7,18,25,35,52,58],color:GOLD},
+    {label:'Pickups / vans',data:[18,21,27,23,20,18,22],color:RED} ],
+  'Model year');
+mkBar('trBestSellersChart',
+  ['Ford F-Series','Chevy Silverado','Toyota RAV4','Honda CR-V','Ram Pickup','Tesla Model Y','Toyota Camry','GMC Sierra','Nissan Rogue','Honda Civic'],
+  [764,560,475,403,373,372,309,300,245,242],
+  GOLD,{horizontal:true,unit:'k',axisTitle:'U.S. units sold, 2024 (thousands)'});
+lineChart('trPriceChart',[1940,1960,1980,1990,2000,2010,2020,2024],
+  [ds('Average price — nominal $',[800,2600,7200,15000,24000,29000,38000,49740],GOLD,{fill:true,width:2.5}),
+   ds('Average price — inflation-adjusted (2024 $)',[18000,27800,27700,36300,44400,42300,47100,49740],BLUE,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Average new-vehicle price ($)',color:'#555'}}});
+lineChart('trWeightChart',[1975,1980,1987,2000,2010,2020,2022],
+  [ds('Average new-vehicle weight (lbs)',[4060,3200,3220,3815,4000,4170,4329],PURPLE,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Average curb weight (lbs)',color:'#555'}}});
+lineChart('trMpgChart',[1975,1980,1990,2000,2010,2020,2022,2023],
+  [ds('Real-world fuel economy (mpg)',[13.1,19.2,21.2,19.8,22.6,25.4,26.0,27.1],GREEN,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Average MPG (EPA real-world)',color:'#555'}}});
+lineChart('trVmtChart',[1940,1960,1980,2000,2010,2019,2020,2022,2023],
+  [ds('Total vehicle-miles traveled (billions)',[302,719,1527,2747,2967,3261,2904,3170,3260],ORANGE,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Total VMT (billions of miles)',color:'#555'}}});
+lineChart('trInsuranceChart',[2000,2005,2010,2015,2020,2022,2024],
+  [ds('Premium — nominal $',[690,825,790,870,1050,1200,1560],RED,{fill:true,width:2.5}),
+   ds('Premium — inflation-adjusted (2024 $)',[1280,1320,1155,1150,1300,1295,1560],BLUE,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Average annual premium ($)',color:'#555'}}});
+lineChart('trEvChart',[2011,2014,2016,2018,2020,2021,2022,2023,2024],
+  [ds('Battery-electric (BEV) %',[0.1,0.4,0.9,1.2,1.8,3.2,5.8,7.3,8.1],GREEN,{fill:true,width:2.5}),
+   ds('BEV + plug-in hybrid %',[0.2,0.7,1.1,2.0,2.0,4.0,6.8,9.0,10.0],BLUE,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,max:12,title:{display:true,text:'% of new light-vehicle sales',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+
+// ═══════════════ TRANSPORTATION: EV deep-dive ═══════════════
+lineChart('trTeslaChart',[2012,2014,2016,2018,2020,2021,2022,2023,2024],
+  [ds('Tesla U.S. sales (thousands)',[3,17,48,191,206,352,522,655,633],RED,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Tesla U.S. deliveries (thousands)',color:'#555'}}});
+lineChart('trTeslaShareChart',[2018,2020,2022,2023,2024,2025],
+  [ds('Tesla share of U.S. EV sales (%)',[78,79,65,55,49,46],PURPLE,{fill:true,width:2.5})],
+  {yAxis:{min:0,max:100,title:{display:true,text:'% of U.S. EV sales',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+lineChart('trEvFleetChart',[2011,2014,2016,2018,2021,2023,2025],
+  [ds('EVs on U.S. roads (millions, cumulative)',[0.02,0.3,0.6,1.1,2.3,4.0,5.5],GREEN,{fill:true,width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'EVs in operation (millions)',color:'#555'}}});
+
+// ═══════════════ FOREIGN-BRAND ADOPTION + MEAL COSTS ═══════════════
+lineChart('trForeignChart',[1970,1980,1990,2000,2010,2024],
+  [ds('Toyota',[2,6.5,8,9,15.2,14.6],RED,{width:2}),
+   ds('Honda',[0.2,4,7,6.6,10.6,9.0],BLUE,{width:2}),
+   ds('Nissan / Datsun',[1,5.5,5,4.2,7.8,6.0],GREEN,{width:2}),
+   ds('Hyundai-Kia',[0,0,1,3,7.7,10.9],ORANGE,{width:2}),
+   ds('Volkswagen',[7,3,1,2,2.2,2.4],PURPLE,{width:2}),
+   ds('BMW',[0.2,0.5,1,1.5,1.8,2.3],TEAL,{width:2}),
+   ds('Mercedes-Benz',[0.3,0.6,1,1.3,1.6,2.0],'#c8973a',{width:2})],
+  {yAxis:{min:0,title:{display:true,text:'% of U.S. light-vehicle sales',color:'#555'},ticks:{color:'#666',callback:v=>v+'%'}}});
+mkBar('trLuxuryChart',
+  ['BMW','Lexus','Mercedes-Benz','Audi','Acura','Volvo','Land Rover','Porsche','Genesis','Infiniti'],
+  [371,345,325,196,134,130,95,75,75,58],
+  GOLD,{horizontal:true,unit:'k',axisTitle:'U.S. units sold, 2024 (thousands)'});
+lineChart('ffMealChart',[1968,1980,1990,2000,2010,2024],
+  [ds('Big Mac — nominal $',[0.45,1.05,2.20,2.51,3.71,5.69],GOLD,{fill:true,width:2.5}),
+   ds('Big Mac — inflation-adjusted (2024 $)',[4.00,4.04,5.32,4.64,5.42,5.69],BLUE,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Big Mac price ($)',color:'#555'}}});
+lineChart('cdMealChart',[1990,2000,2010,2015,2020,2024],
+  [ds('Avg check / person — nominal $',[9,12,15,17,19,23],GOLD,{fill:true,width:2.5}),
+   ds('Avg check / person — inflation-adjusted (2024 $)',[21.8,22.2,21.9,22.4,23.6,23],BLUE,{width:2,dash:[5,3]})],
+  {yAxis:{min:0,title:{display:true,text:'Average check per person ($)',color:'#555'}}});
+
+// ═══════════════ BIG TECH ═══════════════
+mkBar('btCapChart',
+  ['Nvidia','Alphabet','Apple','Microsoft','Amazon','Broadcom','Meta','Tesla','Oracle','Netflix'],
+  [5.2,4.6,4.5,3.1,2.9,1.7,1.7,1.4,0.7,0.5],
+  GOLD,{horizontal:true,unit:'T',axisTitle:'Market cap, early 2026 ($ trillions)'});
+lineChart('btCapTimeChart',[2000,2010,2015,2020,2024,2026],
+  [ds('Apple',[0.005,0.30,0.64,2.0,3.5,4.5],RED,{width:2}),
+   ds('Microsoft',[0.58,0.24,0.44,1.6,3.1,3.1],BLUE,{width:2}),
+   ds('Alphabet',[null,0.19,0.53,1.2,2.3,4.6],GREEN,{width:2}),
+   ds('Amazon',[0.02,0.08,0.32,1.6,2.3,2.9],ORANGE,{width:2}),
+   ds('Nvidia',[0.01,0.01,0.02,0.32,3.3,5.2],PURPLE,{width:2.5})],
+  {yAxis:{min:0,title:{display:true,text:'Market cap ($ trillions)',color:'#555'}}});
+lineChart('btRevenueChart',[1980,1990,2000,2010,2015,2020,2024],
+  [ds('IBM',[26,69,88,100,82,74,63],TEAL,{width:2}),
+   ds('Microsoft',[0,1.2,23,62,94,143,245],BLUE,{width:2}),
+   ds('Apple',[1,5.6,8,65,233,274,391],RED,{width:2}),
+   ds('Amazon',[0,0,2.8,34,107,386,638],ORANGE,{width:2.5}),
+   ds('Alphabet',[0,0,0,29,75,183,350],GREEN,{width:2}),
+   ds('Nvidia',[0,0,0.7,3.5,5,11,130],PURPLE,{width:2})],
+  {yAxis:{min:0,title:{display:true,text:'Annual revenue ($ billions)',color:'#555'}}});
+mkBar('btTopRevChart',
+  ['Amazon','Apple','Alphabet','Microsoft','Meta','Nvidia','Dell','IBM','Intel','Oracle'],
+  [638,391,350,245,164,130,88,63,53,53],
+  GOLD,{horizontal:true,unit:'B',axisTitle:'Revenue, 2024 ($ billions)'});
+mkBar('btUsersChart',
+  ['Facebook','YouTube','WhatsApp','Instagram','TikTok','WeChat','Messenger','Telegram','Snapchat','X / Twitter'],
+  [3.07,2.5,2.0,2.0,1.6,1.3,1.0,0.95,0.85,0.6],
+  GOLD,{horizontal:true,unit:'B',axisTitle:'Monthly active users (billions, 2024)'});
+mkBar('btEmployeesChart',
+  ['Amazon','IBM','Microsoft','Alphabet','Apple','Tesla','Meta','Nvidia'],
+  [1550,270,228,183,164,125,74,30],
+  GOLD,{horizontal:true,unit:'k',axisTitle:'Full-time employees (thousands, 2024; IBM approx.)'});
+mkBar('btMarginChart',
+  ['Nvidia','Meta','Microsoft','Alphabet','Apple','Amazon'],
+  [55,38,36,28,24,9],
+  [PURPLE,BLUE,TEAL,GREEN,RED,ORANGE],
+  {unit:'%',axisTitle:'Net profit margin, 2024 (%)'});
+mkBar('btValRevChart',
+  ['Nvidia','Tesla','Microsoft','Alphabet','Apple','Meta','Amazon'],
+  [40,14,13,13,11,10,4.5],
+  [PURPLE,RED,TEAL,GREEN,BLUE,ORANGE,GOLD],
+  {unit:'×',axisTitle:'Market cap ÷ revenue (price-to-sales, early 2026)'});
 
 // ═══════════════ CHART ZOOM (click to enlarge) ═══════════════
 let zoomState=null;
