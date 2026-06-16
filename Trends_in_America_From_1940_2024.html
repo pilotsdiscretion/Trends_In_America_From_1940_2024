@@ -994,6 +994,68 @@
 
   <div class="data-note">NCI SEER incidence data available from 1975. Earlier cancer mortality data from NCHS. Age-adjusted to 2000 US standard population.</div>
 
+  <!-- ── Cancer in depth (2026 expansion) ── -->
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid #2a2a3a">
+    <h3 class="conclusion-heading" style="margin-bottom:4px">Cancer in Depth — Types, Detection, Treatment &amp; Age</h3>
+    <p style="color:#888;font-size:0.88rem;margin-bottom:16px">In 2024 the U.S. crossed <strong style="color:#b8a880">2 million new cancer cases</strong> for the first time, even as the death rate kept falling — a result of earlier detection and far better treatment. The breakdowns below show which cancers are most common and most lethal, how survival has improved over 50 years, why the stage at diagnosis is decisive, screening trends, and how sharply risk rises with age.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-value">2.00M</div><div class="stat-label">New cancer cases, 2024 — first year above 2 million (ACS)</div></div>
+    <div class="stat-box"><div class="stat-value">611,720</div><div class="stat-label">Cancer deaths, 2024 (ACS estimate)</div></div>
+    <div class="stat-box"><div class="stat-value">69%</div><div class="stat-label">5-yr relative survival (2013–19)</div><div class="stat-change good">↑ from 49% in the mid-1970s</div></div>
+    <div class="stat-box"><div class="stat-value">66</div><div class="stat-label">Median age at diagnosis, all cancers (SEER)</div></div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Most Common Cancers — New Cases, 2024</h3>
+      <div class="subtitle">Estimated new U.S. cases by site (thousands) — ACS Cancer Facts &amp; Figures 2024.</div>
+      <div class="chart-wrapper" style="height:400px"><canvas id="cancerTypeIncChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Deadliest Cancers — Deaths, 2024</h3>
+      <div class="subtitle">Estimated U.S. deaths by site (thousands) — ACS 2024. Lung cancer kills more than the next three combined.</div>
+      <div class="chart-wrapper" style="height:400px"><canvas id="cancerTypeDeathChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>5-Year Survival Over Time (All Cancers)</h3>
+      <div class="subtitle">5-year relative survival, all sites — NCI SEER. Better treatment plus earlier detection lifted survival from ~49% to ~69%.</div>
+      <div class="chart-wrapper"><canvas id="survivalTrendChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Treatment Progress — Survival by Type, 1975 vs. Now</h3>
+      <div class="subtitle">5-year relative survival, mid-1970s vs. recent — NCI SEER. Leukemia and prostate saw the biggest gains; pancreatic and lung remain hardest.</div>
+      <div class="chart-wrapper" style="height:320px"><canvas id="survivalByTypeChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Why Early Diagnosis Matters — Survival by Stage</h3>
+      <div class="subtitle">5-year relative survival by stage at diagnosis (localized vs. regional vs. distant) — NCI SEER. Catching cancer early is often the difference between ~90%+ and single-digit survival.</div>
+      <div class="chart-wrapper" style="height:320px"><canvas id="survivalByStageChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Cancer Screening Rates Over Time</h3>
+      <div class="subtitle">% of the target population up to date — CDC National Health Interview Survey. Colorectal screening rose sharply; mammography is steady; cervical (Pap) has slipped.</div>
+      <div class="chart-wrapper"><canvas id="cancerScreeningChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Cancer Risk Rises Steeply with Age</h3>
+      <div class="subtitle">Share of new cancer diagnoses by age group — NCI SEER. About 80% of cancers are diagnosed at age 55+, though "early-onset" cancer (under 50) — colorectal especially — is rising.</div>
+      <div class="chart-wrapper" style="height:300px"><canvas id="cancerAgeChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="data-note">Incidence and deaths by type: American Cancer Society, <em>Cancer Facts &amp; Figures 2024</em> (Siegel et al., <em>CA: A Cancer Journal for Clinicians</em>; first year U.S. new cases exceeded 2 million). Survival (all sites, by type, and by stage) and the age distribution: NCI SEER (Cancer Stat Facts; 5-year relative survival for 2013–2021 diagnoses, with mid-1970s from SEER-9). Screening: CDC National Health Interview Survey (share of the recommended population up to date; latest ≈2021). Median age at diagnosis (all cancers) = 66. Survival figures are "relative" (adjusted for normal life expectancy) and vary by year and registry — verify current values at the cited sources.</div>
+
   <div class="key-events">
     <h4>Key Timeline Events</h4>
     <div class="events-grid">
@@ -1305,7 +1367,7 @@
   <div class="chart-grid single" style="margin-top:24px">
     <div class="chart-card">
       <h3>Recommended Childhood Vaccine Schedule — Doses &amp; Diseases Over Time</h3>
-      <div class="subtitle">Left axis (gold): total individual doses recommended birth–age 18, <em>excluding</em> annual influenza (which adds ~18 additional doses across childhood). Right axis (blue): distinct vaccine-preventable diseases/pathogens on the ACIP schedule. Sources: CDC ACIP schedule archives, CDC Pink Book, AAP/AAFP immunization schedules.</div>
+      <div class="subtitle">Left axis (gold): total individual doses recommended birth–age 18, <em>excluding</em> annual influenza (~42 by 2023). Counting one influenza dose per year adds ~16–18 more, bringing the by-age-18 total to <strong style="color:#b8a880">roughly 60</strong> (commonly cited; counts range ~50–70 by method). Right axis (blue): distinct vaccine-preventable diseases on the ACIP schedule. Sources: CDC/ACIP schedule archives, CDC Pink Book. A per-vaccine breakdown of the ~60 doses is shown below.</div>
       <div class="chart-wrapper"><canvas id="vaccineScheduleChart"></canvas></div>
     </div>
   </div>
@@ -1320,6 +1382,15 @@
   </div>
 
   <div class="data-note">ASD prevalence data: CDC ADDM Network biennial surveillance reports (2000–2022), monitoring 8-year-olds across multiple U.S. sites. Pre-2000 estimates from Fombonne (2009) and Lundstrom et al. meta-analysis — these are approximations with wide confidence intervals, as systematic population surveillance did not exist before the ADDM Network. The rise in prevalence reflects a combination of factors: (1) expanded diagnostic criteria in DSM-IV (1994) and DSM-5 (2013); (2) increased awareness and screening; (3) diagnostic substitution from intellectual disability; (4) possible true prevalence increase from as-yet-unidentified environmental factors. Vaccine causation has been studied extensively and ruled out by the scientific community. Measles and vaccination coverage data: CDC MMWR Surveillance Summaries; National Immunization Survey.</div>
+
+  <!-- ── Doses by vaccine (current schedule) — 2026 addition ── -->
+  <div class="chart-grid single" style="margin-top:24px">
+    <div class="chart-card">
+      <h3>Childhood Schedule by Vaccine — Doses by Age 18 (≈60 total)</h3>
+      <div class="subtitle">Individual doses of each vaccine recommended from birth to age 18 on the CDC/ACIP schedule. Counting one influenza dose per year, the total is on the order of <strong style="color:#b8a880">~60 doses</strong> (≈40 excluding annual flu); estimates range ~50–70 depending on counting method. COVID-19, meningococcal B, and RSV counts vary by year and individual risk. The expansion reflects protection against more diseases (see the over-time chart above). Source: CDC/ACIP Child &amp; Adolescent Immunization Schedule.</div>
+      <div class="chart-wrapper" style="height:420px"><canvas id="vaccineDosesByTypeChart"></canvas></div>
+    </div>
+  </div>
 
   <div class="key-events">
     <h4>Key Timeline Events</h4>
@@ -4296,7 +4367,7 @@ lineChart('measlesChart',
   if (!ctx) return;
 
   const yrs      = [1940,1950,1955,1963,1967,1969,1972,1983,1991,1995,2000,2006,2011,2015,2021,2023];
-  const doses    = [  4,   5,   9,  10,  11,  13,  10,  11,  18,  19,  23,  31,  36,  40,  44,  50];
+  const doses    = [  4,   5,   9,  10,  11,  13,  10,  11,  18,  19,  23,  30,  34,  38,  40,  42];
   const diseases = [  2,   4,   5,   6,   7,   8,   7,   7,   9,  10,  11,  14,  16,  17,  18,  19];
 
   new Chart(ctx, {
@@ -4330,7 +4401,7 @@ lineChart('measlesChart',
           titleColor: '#d0c8b0', bodyColor: '#aaa',
           callbacks: {
             label: c => c.datasetIndex === 0
-              ? ' Recommended doses: ' + c.parsed.y + ' (+ ~18 flu doses not shown)'
+              ? ' Recommended doses: ' + c.parsed.y + ' (+ ~16–18 annual flu → ~60 total by age 18)'
               : ' Diseases protected: ' + c.parsed.y
           }
         }
@@ -4355,6 +4426,12 @@ lineChart('measlesChart',
     }
   });
 })();
+
+// ─── VACCINES: doses by vaccine (current childhood schedule) ──────
+mkBar('vaccineDosesByTypeChart',
+  ['Influenza (annual, ~1/yr)','DTaP + Tdap','Hib','Pneumococcal (PCV)','Polio (IPV)','Hepatitis B','Rotavirus','COVID-19','HPV','MMR','Varicella','Hepatitis A','Meningococcal ACWY','Meningococcal B'],
+  [18,6,4,4,4,3,3,3,3,2,2,2,2,2],
+  GOLD, {horizontal:true, unit:' doses', axisTitle:'Doses recommended by age 18 (CDC/ACIP) — total ≈ 58–60 incl. annual flu'});
 
 // ─── MENTAL: Depression prevalence ───────────────────────────────
 lineChart('depressionChart',
@@ -6666,6 +6743,56 @@ mkStacked('suicideMethodChart',
     {label:'Poisoning', data:[4,5,11,18,11], color:GREEN},
     {label:'Other', data:[6,6,6,7,4], color:'#8a8a8a'} ],
   'Age group');
+
+// ═══════════════ CANCER: in-depth (types, survival, screening, age) ═══════════════
+function mkGroupedBar(id,labels,series,yTitle,yMax){
+  const ctx=document.getElementById(id); if(!ctx) return;
+  new Chart(ctx,{ type:'bar',
+    data:{ labels, datasets: series.map(s=>({ label:s.label, data:s.data,
+      backgroundColor:s.color+'cc', borderColor:s.color, borderWidth:1 })) },
+    options:_baseOpts({
+      plugins:{ legend:{labels:{color:'#aaa',boxWidth:12,font:{size:10}}},
+        tooltip:{ backgroundColor:'#1a1d2e',borderColor:'#3a3a5a',borderWidth:1,titleColor:'#d0c8b0',bodyColor:'#aaa',
+          callbacks:{ label:c=>' '+c.dataset.label+': '+c.parsed.y+'%' } } },
+      scales:{ x:{ grid:{color:'#1e1e2e'}, ticks:{color:'#888',font:{size:9}} },
+        y:{ beginAtZero:true, max:yMax||100, grid:{color:'#1e1e2e'}, ticks:{color:'#888',callback:v=>v+'%'},
+            title:{display:true,text:yTitle,color:'#555'} } }
+    })
+  });
+}
+mkBar('cancerTypeIncChart',
+  ['Breast','Prostate','Lung & bronchus','Colorectal','Melanoma','Bladder','Kidney','Non-Hodgkin lymph.','Uterine','Pancreatic','Leukemia','Thyroid'],
+  [313.5,299.0,234.6,152.8,100.6,83.2,81.6,80.6,67.9,66.4,62.8,44.0],
+  GOLD, {horizontal:true, unit:'k', axisTitle:'Estimated new U.S. cases, 2024 (thousands) — ACS'});
+mkBar('cancerTypeDeathChart',
+  ['Lung & bronchus','Colorectal','Pancreatic','Breast','Prostate','Liver','Leukemia','Non-Hodgkin lymph.','Brain / CNS','Esophagus'],
+  [125.1,53.0,51.8,42.8,35.3,29.0,23.7,20.1,18.8,16.0],
+  RED, {horizontal:true, unit:'k', axisTitle:'Estimated U.S. deaths, 2024 (thousands) — ACS'});
+lineChart('survivalTrendChart',
+  [1975,1985,1995,2005,2013,2019],
+  [ds('5-year relative survival, all cancers',[49,53,57,66,68,69],GREEN,{fill:true,width:2.5})],
+  { yAxis:{ min:0, max:100, title:{display:true,text:'% surviving 5 years (relative)',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+mkGroupedBar('survivalByTypeChart',
+  ['Prostate','Melanoma','Breast','Colorectal','Leukemia','Lung','Pancreatic','All sites'],
+  [ {label:'mid-1970s', data:[68,82,75,50,34,12,3,49], color:BLUE},
+    {label:'recent (2013–21)', data:[97,94,91,65,67,25,13,69], color:GOLD} ],
+  '5-year relative survival', 100);
+mkGroupedBar('survivalByStageChart',
+  ['Breast','Melanoma','Colorectal','Lung'],
+  [ {label:'Localized (early)', data:[99,99.5,91,64], color:GREEN},
+    {label:'Regional', data:[87,75,73,37], color:GOLD},
+    {label:'Distant (late)', data:[32,35,13,9], color:RED} ],
+  '5-year relative survival', 100);
+lineChart('cancerScreeningChart',
+  [1987,2000,2008,2013,2015,2018,2021],
+  [ds('Mammography (women 50–74)',[29,70,72,72,71,73,75.7],BLUE,{width:2.5}),
+   ds('Colorectal (ages 50–75)',[null,38,55,59,63,66,72.2],GOLD,{width:2.5}),
+   ds('Cervical / Pap (women)',[null,87,85,83,81,78,75.2],PURPLE,{width:2.5})],
+  { yAxis:{ min:0, max:100, title:{display:true,text:'% up to date with screening',color:'#555'}, ticks:{color:'#666',callback:v=>v+'%'} } });
+mkBar('cancerAgeChart',
+  ['<20','20–34','35–44','45–54','55–64','65–74','75–84','85+'],
+  [1.0,2.9,5.7,13.6,24.3,25.4,18.7,8.3],
+  TEAL, {unit:'%', axisTitle:'% of new cancer diagnoses by age group (SEER)'});
 
 // ═══════════════ CHART ZOOM (click to enlarge) ═══════════════
 let zoomState=null;
