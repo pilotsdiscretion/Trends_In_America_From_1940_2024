@@ -40,6 +40,7 @@ Each tab combines headline statistics, multiple charts, a "key timeline events" 
 - **Collapsible topic header** — a "☰ Topics" toggle shows or hides the full tab list on any screen size.
 - **Click-to-zoom charts** — every chart has a zoom (⤢) control that opens it full-screen for closer inspection; press Esc or click outside to close.
 - **Interactive politics tools** — pick any state to see how it voted in every election against the national trend, and scroll the full state-by-election heatmap.
+- **Sourced throughout** — every chart, every table, and every "Key Timeline Events" entry carries a clickable "source ↗" link to its section on the Sources & Citations page.
 
 ## Data & methodology
 
