@@ -26,6 +26,8 @@ Each tab combines headline statistics, multiple charts, a "key timeline events" 
 - **Mental Health** — depression and antidepressant trends, deinstitutionalization, and common diagnoses over time (anxiety, depression, bipolar, schizophrenia) with prevalence and trend charts.
 - **Alcohol & Overdoses** — per-capita alcohol use and the three opioid waves, including **fentanyl** as a share of all overdose deaths and its rise and recent decline.
 - **Poverty** — official vs. Supplemental Poverty Measure over time, and breakdowns by age, race, gender/family structure, and state, alongside the economic drivers (unemployment, recessions, income, minimum wage).
+- **Cancer** — incidence and mortality over time, the most common and deadliest cancers by type, 5-year survival over time and by type (treatment progress), survival by stage at diagnosis (why early detection matters), cancer-screening-rate trends, and how risk rises with age.
+- **Vaccines** — measles/MMR coverage and case resurgence, the childhood immunization schedule's growth over time (doses and diseases protected), the current schedule broken down by individual vaccine (~60 doses by age 18), and autism-spectrum prevalence alongside the scientific consensus that vaccines do not cause autism.
 
 ## Features
 
